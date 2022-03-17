@@ -1,0 +1,4239 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "PauserAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "PauserRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addPauser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isPauser",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renouncePauser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "17": "contracts/PauserRole.sol",
+    "18": "contracts/Roles.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/PauserRole.sol",
+    "exportedSymbols": {
+      "PauserRole": [
+        3302
+      ],
+      "Roles": [
+        3406
+      ]
+    },
+    "id": 3303,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3199,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:17"
+      },
+      {
+        "absolutePath": "contracts/Roles.sol",
+        "file": "./Roles.sol",
+        "id": 3200,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3303,
+        "sourceUnit": 3407,
+        "src": "58:21:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "PauserRole",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 3302,
+        "linearizedBaseContracts": [
+          3302
+        ],
+        "name": "PauserRole",
+        "nameLocation": "91:10:17",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 3204,
+            "libraryName": {
+              "id": 3201,
+              "name": "Roles",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 3406,
+              "src": "114:5:17"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "108:27:17",
+            "typeName": {
+              "id": 3203,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 3202,
+                "name": "Roles.Role",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 3310,
+                "src": "124:10:17"
+              },
+              "referencedDeclaration": 3310,
+              "src": "124:10:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$3310_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "id": 3208,
+            "name": "PauserAdded",
+            "nameLocation": "147:11:17",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3207,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3206,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "175:7:17",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3208,
+                  "src": "159:23:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3205,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "159:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "158:25:17"
+            },
+            "src": "141:43:17"
+          },
+          {
+            "anonymous": false,
+            "id": 3212,
+            "name": "PauserRemoved",
+            "nameLocation": "195:13:17",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3211,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3210,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "225:7:17",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3212,
+                  "src": "209:23:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3209,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "209:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:25:17"
+            },
+            "src": "189:45:17"
+          },
+          {
+            "constant": false,
+            "id": 3215,
+            "mutability": "mutable",
+            "name": "_pausers",
+            "nameLocation": "259:8:17",
+            "nodeType": "VariableDeclaration",
+            "scope": 3302,
+            "src": "240:27:17",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$3310_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "id": 3214,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 3213,
+                "name": "Roles.Role",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 3310,
+                "src": "240:10:17"
+              },
+              "referencedDeclaration": 3310,
+              "src": "240:10:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$3310_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 3223,
+              "nodeType": "Block",
+              "src": "289:39:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 3219,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "310:3:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3220,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "310:10:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3218,
+                      "name": "_addPauser",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3285,
+                      "src": "299:10:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3221,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "299:22:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3222,
+                  "nodeType": "ExpressionStatement",
+                  "src": "299:22:17"
+                }
+              ]
+            },
+            "id": 3224,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3216,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "286:2:17"
+            },
+            "returnParameters": {
+              "id": 3217,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "289:0:17"
+            },
+            "scope": 3302,
+            "src": "274:54:17",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3234,
+              "nodeType": "Block",
+              "src": "356:57:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 3228,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "383:3:17",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 3229,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "383:10:17",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3227,
+                          "name": "isPauser",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3248,
+                          "src": "374:8:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 3230,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "374:20:17",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 3226,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "366:7:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 3231,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "366:29:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3232,
+                  "nodeType": "ExpressionStatement",
+                  "src": "366:29:17"
+                },
+                {
+                  "id": 3233,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "405:1:17"
+                }
+              ]
+            },
+            "id": 3235,
+            "name": "onlyPauser",
+            "nameLocation": "343:10:17",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 3225,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "353:2:17"
+            },
+            "src": "334:79:17",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3247,
+              "nodeType": "Block",
+              "src": "481:45:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 3244,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3237,
+                        "src": "511:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 3242,
+                        "name": "_pausers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3215,
+                        "src": "498:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$3310_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 3243,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3405,
+                      "src": "498:12:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$3310_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$3310_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 3245,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "498:21:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 3241,
+                  "id": 3246,
+                  "nodeType": "Return",
+                  "src": "491:28:17"
+                }
+              ]
+            },
+            "functionSelector": "46fbf68e",
+            "id": 3248,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isPauser",
+            "nameLocation": "428:8:17",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3238,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3237,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "445:7:17",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3248,
+                  "src": "437:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3236,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "437:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "436:17:17"
+            },
+            "returnParameters": {
+              "id": 3241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3240,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3248,
+                  "src": "475:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3239,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:6:17"
+            },
+            "scope": 3302,
+            "src": "419:107:17",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3259,
+              "nodeType": "Block",
+              "src": "586:36:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 3256,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3250,
+                        "src": "607:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3255,
+                      "name": "_addPauser",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3285,
+                      "src": "596:10:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "596:19:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "596:19:17"
+                }
+              ]
+            },
+            "functionSelector": "82dc1ec4",
+            "id": 3260,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 3253,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 3252,
+                  "name": "onlyPauser",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 3235,
+                  "src": "575:10:17"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "575:10:17"
+              }
+            ],
+            "name": "addPauser",
+            "nameLocation": "541:9:17",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3251,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3250,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "559:7:17",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3260,
+                  "src": "551:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3249,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "551:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "550:17:17"
+            },
+            "returnParameters": {
+              "id": 3254,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "586:0:17"
+            },
+            "scope": 3302,
+            "src": "532:90:17",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3268,
+              "nodeType": "Block",
+              "src": "661:42:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 3264,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "685:3:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 3265,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "685:10:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3263,
+                      "name": "_removePauser",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3301,
+                      "src": "671:13:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3266,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "671:25:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3267,
+                  "nodeType": "ExpressionStatement",
+                  "src": "671:25:17"
+                }
+              ]
+            },
+            "functionSelector": "6ef8d66d",
+            "id": 3269,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "renouncePauser",
+            "nameLocation": "637:14:17",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "651:2:17"
+            },
+            "returnParameters": {
+              "id": 3262,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "661:0:17"
+            },
+            "scope": 3302,
+            "src": "628:75:17",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3284,
+              "nodeType": "Block",
+              "src": "755:73:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 3277,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3271,
+                        "src": "778:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 3274,
+                        "name": "_pausers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3215,
+                        "src": "765:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$3310_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 3276,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3345,
+                      "src": "765:12:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$3310_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$3310_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 3278,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "765:21:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3279,
+                  "nodeType": "ExpressionStatement",
+                  "src": "765:21:17"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 3281,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3271,
+                        "src": "813:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3280,
+                      "name": "PauserAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3208,
+                      "src": "801:11:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3282,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "801:20:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3283,
+                  "nodeType": "EmitStatement",
+                  "src": "796:25:17"
+                }
+              ]
+            },
+            "id": 3285,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_addPauser",
+            "nameLocation": "718:10:17",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3272,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3271,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "737:7:17",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3285,
+                  "src": "729:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3270,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "729:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "728:17:17"
+            },
+            "returnParameters": {
+              "id": 3273,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "755:0:17"
+            },
+            "scope": 3302,
+            "src": "709:119:17",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3300,
+              "nodeType": "Block",
+              "src": "883:78:17",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 3293,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3287,
+                        "src": "909:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 3290,
+                        "name": "_pausers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3215,
+                        "src": "893:8:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$3310_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 3292,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3379,
+                      "src": "893:15:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$3310_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$3310_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 3294,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "893:24:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3295,
+                  "nodeType": "ExpressionStatement",
+                  "src": "893:24:17"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 3297,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3287,
+                        "src": "946:7:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3296,
+                      "name": "PauserRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3212,
+                      "src": "932:13:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3298,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "932:22:17",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3299,
+                  "nodeType": "EmitStatement",
+                  "src": "927:27:17"
+                }
+              ]
+            },
+            "id": 3301,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_removePauser",
+            "nameLocation": "843:13:17",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3288,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3287,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "865:7:17",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3301,
+                  "src": "857:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3286,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "857:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "856:17:17"
+            },
+            "returnParameters": {
+              "id": 3289,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "883:0:17"
+            },
+            "scope": 3302,
+            "src": "834:127:17",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3303,
+        "src": "82:881:17",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:930:17"
+  },
+  "bytecode": "608060405234801561001057600080fd5b5061001a3361001f565b6100ef565b61003781600061006e60201b6100c51790919060201c565b6040516001600160a01b038216907f6719d08c1888103bea251a4ed56406bd0c3e69723c8a1686e017e7bbe159b6f890600090a250565b6001600160a01b03811661008157600080fd5b61008b82826100ba565b1561009557600080fd5b6001600160a01b0316600090815260209190915260409020805460ff19166001179055565b60006001600160a01b0382166100cf57600080fd5b506001600160a01b03166000908152602091909152604090205460ff1690565b610278806100fe6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806346fbf68e146100465780636ef8d66d1461006d57806382dc1ec414610077575b600080fd5b610059610054366004610212565b61008a565b604051901515815260200160405180910390f35b61007561009c565b005b610075610085366004610212565b6100a7565b60006100968183610111565b92915050565b6100a533610146565b565b6100b03361008a565b6100b957600080fd5b6100c281610188565b50565b6001600160a01b0381166100d857600080fd5b6100e28282610111565b156100ec57600080fd5b6001600160a01b0316600090815260209190915260409020805460ff19166001179055565b60006001600160a01b03821661012657600080fd5b506001600160a01b03166000908152602091909152604090205460ff1690565b6101516000826101ca565b6040516001600160a01b038216907fcd265ebaf09df2871cc7bd4133404a235ba12eff2041bb89d9c714a2621c7c7e90600090a250565b6101936000826100c5565b6040516001600160a01b038216907f6719d08c1888103bea251a4ed56406bd0c3e69723c8a1686e017e7bbe159b6f890600090a250565b6001600160a01b0381166101dd57600080fd5b6101e78282610111565b6101f057600080fd5b6001600160a01b0316600090815260209190915260409020805460ff19169055565b60006020828403121561022457600080fd5b81356001600160a01b038116811461023b57600080fd5b939250505056fea2646970667358221220bcf79c3581f1781bf30946ef3a982a80ccbd85ccb0000d95d34d37fc5583496d64736f6c634300080b0033",
+  "bytecodeSha1": "8f07414d0989e90750c4ec24598457782c6d008a",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.11+commit.d7f03943"
+  },
+  "contractName": "PauserRole",
+  "coverageMap": {
+    "branches": {
+      "17": {
+        "PauserRole.addPauser": {
+          "15": [
+            374,
+            394,
+            true
+          ]
+        }
+      },
+      "18": {
+        "Roles.add": {
+          "16": [
+            369,
+            390,
+            true
+          ],
+          "17": [
+            409,
+            428,
+            true
+          ]
+        },
+        "Roles.has": {
+          "18": [
+            916,
+            937,
+            true
+          ]
+        },
+        "Roles.remove": {
+          "19": [
+            627,
+            648,
+            true
+          ],
+          "20": [
+            667,
+            685,
+            true
+          ]
+        }
+      }
+    },
+    "statements": {
+      "17": {
+        "PauserRole._addPauser": {
+          "10": [
+            765,
+            786
+          ],
+          "11": [
+            796,
+            821
+          ]
+        },
+        "PauserRole._removePauser": {
+          "8": [
+            893,
+            917
+          ],
+          "9": [
+            927,
+            954
+          ]
+        },
+        "PauserRole.addPauser": {
+          "2": [
+            596,
+            615
+          ]
+        },
+        "PauserRole.isPauser": {
+          "0": [
+            491,
+            519
+          ]
+        },
+        "PauserRole.renouncePauser": {
+          "1": [
+            671,
+            696
+          ]
+        }
+      },
+      "18": {
+        "Roles.add": {
+          "3": [
+            361,
+            391
+          ],
+          "4": [
+            401,
+            429
+          ],
+          "5": [
+            440,
+            467
+          ]
+        },
+        "Roles.has": {
+          "6": [
+            908,
+            938
+          ],
+          "7": [
+            948,
+            975
+          ]
+        },
+        "Roles.remove": {
+          "12": [
+            619,
+            649
+          ],
+          "13": [
+            659,
+            686
+          ],
+          "14": [
+            697,
+            725
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [
+    "Roles"
+  ],
+  "deployedBytecode": "608060405234801561001057600080fd5b50600436106100415760003560e01c806346fbf68e146100465780636ef8d66d1461006d57806382dc1ec414610077575b600080fd5b610059610054366004610212565b61008a565b604051901515815260200160405180910390f35b61007561009c565b005b610075610085366004610212565b6100a7565b60006100968183610111565b92915050565b6100a533610146565b565b6100b03361008a565b6100b957600080fd5b6100c281610188565b50565b6001600160a01b0381166100d857600080fd5b6100e28282610111565b156100ec57600080fd5b6001600160a01b0316600090815260209190915260409020805460ff19166001179055565b60006001600160a01b03821661012657600080fd5b506001600160a01b03166000908152602091909152604090205460ff1690565b6101516000826101ca565b6040516001600160a01b038216907fcd265ebaf09df2871cc7bd4133404a235ba12eff2041bb89d9c714a2621c7c7e90600090a250565b6101936000826100c5565b6040516001600160a01b038216907f6719d08c1888103bea251a4ed56406bd0c3e69723c8a1686e017e7bbe159b6f890600090a250565b6001600160a01b0381166101dd57600080fd5b6101e78282610111565b6101f057600080fd5b6001600160a01b0316600090815260209190915260409020805460ff19169055565b60006020828403121561022457600080fd5b81356001600160a01b038116811461023b57600080fd5b939250505056fea2646970667358221220bcf79c3581f1781bf30946ef3a982a80ccbd85ccb0000d95d34d37fc5583496d64736f6c634300080b0033",
+  "deployedSourceMap": "82:881:17:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;419:107;;;;;;:::i;:::-;;:::i;:::-;;;470:14:19;;463:22;445:41;;433:2;418:18;419:107:17;;;;;;;628:75;;;:::i;:::-;;532:90;;;;;;:::i;:::-;;:::i;419:107::-;475:4;498:21;475:4;511:7;498:12;:21::i;:::-;491:28;419:107;-1:-1:-1;;419:107:17:o;628:75::-;671:25;685:10;671:13;:25::i;:::-;628:75::o;532:90::-;374:20;383:10;374:8;:20::i;:::-;366:29;;;;;;596:19:::1;607:7;596:10;:19::i;:::-;532:90:::0;:::o;293:181:18:-;-1:-1:-1;;;;;369:21:18;;361:30;;;;;;410:18;414:4;420:7;410:3;:18::i;:::-;409:19;401:28;;;;;;-1:-1:-1;;;;;440:20:18;:11;:20;;;;;;;;;;;:27;;-1:-1:-1;;440:27:18;463:4;440:27;;;293:181::o;820:162::-;892:4;-1:-1:-1;;;;;916:21:18;;908:30;;;;;;-1:-1:-1;;;;;;955:20:18;:11;:20;;;;;;;;;;;;;;;820:162::o;834:127:17:-;893:24;:8;909:7;893:15;:24::i;:::-;932:22;;-1:-1:-1;;;;;932:22:17;;;;;;;;834:127;:::o;709:119::-;765:21;:8;778:7;765:12;:21::i;:::-;801:20;;-1:-1:-1;;;;;801:20:17;;;;;;;;709:119;:::o;548:184:18:-;-1:-1:-1;;;;;627:21:18;;619:30;;;;;;667:18;671:4;677:7;667:3;:18::i;:::-;659:27;;;;;;-1:-1:-1;;;;;697:20:18;720:5;697:20;;;;;;;;;;;:28;;-1:-1:-1;;697:28:18;;;548:184::o;14:286:19:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;168:23;;-1:-1:-1;;;;;220:31:19;;210:42;;200:70;;266:1;263;256:12;200:70;289:5;14:286;-1:-1:-1;;;14:286:19:o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "offset": [
+    82,
+    963
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x41 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x46FBF68E EQ PUSH2 0x46 JUMPI DUP1 PUSH4 0x6EF8D66D EQ PUSH2 0x6D JUMPI DUP1 PUSH4 0x82DC1EC4 EQ PUSH2 0x77 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x59 PUSH2 0x54 CALLDATASIZE PUSH1 0x4 PUSH2 0x212 JUMP JUMPDEST PUSH2 0x8A JUMP JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x75 PUSH2 0x9C JUMP JUMPDEST STOP JUMPDEST PUSH2 0x75 PUSH2 0x85 CALLDATASIZE PUSH1 0x4 PUSH2 0x212 JUMP JUMPDEST PUSH2 0xA7 JUMP JUMPDEST PUSH1 0x0 PUSH2 0x96 DUP2 DUP4 PUSH2 0x111 JUMP JUMPDEST SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH2 0xA5 CALLER PUSH2 0x146 JUMP JUMPDEST JUMP JUMPDEST PUSH2 0xB0 CALLER PUSH2 0x8A JUMP JUMPDEST PUSH2 0xB9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0xC2 DUP2 PUSH2 0x188 JUMP JUMPDEST POP JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND PUSH2 0xD8 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0xE2 DUP3 DUP3 PUSH2 0x111 JUMP JUMPDEST ISZERO PUSH2 0xEC JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 DUP1 SLOAD PUSH1 0xFF NOT AND PUSH1 0x1 OR SWAP1 SSTORE JUMP JUMPDEST PUSH1 0x0 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP3 AND PUSH2 0x126 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD PUSH1 0xFF AND SWAP1 JUMP JUMPDEST PUSH2 0x151 PUSH1 0x0 DUP3 PUSH2 0x1CA JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP3 AND SWAP1 PUSH32 0xCD265EBAF09DF2871CC7BD4133404A235BA12EFF2041BB89D9C714A2621C7C7E SWAP1 PUSH1 0x0 SWAP1 LOG2 POP JUMP JUMPDEST PUSH2 0x193 PUSH1 0x0 DUP3 PUSH2 0xC5 JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP3 AND SWAP1 PUSH32 0x6719D08C1888103BEA251A4ED56406BD0C3E69723C8A1686E017E7BBE159B6F8 SWAP1 PUSH1 0x0 SWAP1 LOG2 POP JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND PUSH2 0x1DD JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x1E7 DUP3 DUP3 PUSH2 0x111 JUMP JUMPDEST PUSH2 0x1F0 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x20 SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 DUP1 SLOAD PUSH1 0xFF NOT AND SWAP1 SSTORE JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x224 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x23B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP4 SWAP3 POP POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xBC 0xF7 SWAP13 CALLDATALOAD DUP2 CALL PUSH25 0x1BF30946EF3A982A80CCBD85CCB0000D95D34D37FC5583496D PUSH5 0x736F6C6343 STOP ADDMOD SIGNEXTEND STOP CALLER ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "MSTORE",
+      "path": "17"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "CALLVALUE",
+      "path": "17"
+    },
+    "6": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "ISZERO",
+      "path": "17"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x10"
+    },
+    "11": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPI",
+      "path": "17"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "14": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "15": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "REVERT",
+      "path": "17"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "17": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "POP",
+      "path": "17"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x4"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "CALLDATASIZE",
+      "path": "17"
+    },
+    "21": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "LT",
+      "path": "17"
+    },
+    "22": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x41"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPI",
+      "path": "17"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "28": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "CALLDATALOAD",
+      "path": "17"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0xE0"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "SHR",
+      "path": "17"
+    },
+    "32": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "33": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH4",
+      "path": "17",
+      "value": "0x46FBF68E"
+    },
+    "38": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "EQ",
+      "path": "17"
+    },
+    "39": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x46"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPI",
+      "path": "17"
+    },
+    "43": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "44": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH4",
+      "path": "17",
+      "value": "0x6EF8D66D"
+    },
+    "49": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "EQ",
+      "path": "17"
+    },
+    "50": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x6D"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPI",
+      "path": "17"
+    },
+    "54": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "55": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH4",
+      "path": "17",
+      "value": "0x82DC1EC4"
+    },
+    "60": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "EQ",
+      "path": "17"
+    },
+    "61": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x77"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPI",
+      "path": "17"
+    },
+    "65": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "66": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "68": {
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "69": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        82,
+        963
+      ],
+      "op": "REVERT",
+      "path": "17"
+    },
+    "70": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "71": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x59"
+    },
+    "74": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x54"
+    },
+    "77": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "CALLDATASIZE",
+      "path": "17"
+    },
+    "78": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x4"
+    },
+    "80": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x212"
+    },
+    "83": {
+      "fn": "PauserRole.isPauser",
+      "jump": "i",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "84": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "85": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x8A"
+    },
+    "88": {
+      "fn": "PauserRole.isPauser",
+      "jump": "i",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "89": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "90": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x40"
+    },
+    "92": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "MLOAD",
+      "path": "17"
+    },
+    "93": {
+      "op": "SWAP1"
+    },
+    "94": {
+      "op": "ISZERO"
+    },
+    "95": {
+      "op": "ISZERO"
+    },
+    "96": {
+      "op": "DUP2"
+    },
+    "97": {
+      "op": "MSTORE"
+    },
+    "98": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "100": {
+      "op": "ADD"
+    },
+    "101": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x40"
+    },
+    "103": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "MLOAD",
+      "path": "17"
+    },
+    "104": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "105": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "SWAP2",
+      "path": "17"
+    },
+    "106": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "SUB",
+      "path": "17"
+    },
+    "107": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "108": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "RETURN",
+      "path": "17"
+    },
+    "109": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "110": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x75"
+    },
+    "113": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x9C"
+    },
+    "116": {
+      "fn": "PauserRole.renouncePauser",
+      "jump": "i",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "117": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "118": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "STOP",
+      "path": "17"
+    },
+    "119": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "120": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x75"
+    },
+    "123": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x85"
+    },
+    "126": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "CALLDATASIZE",
+      "path": "17"
+    },
+    "127": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x4"
+    },
+    "129": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x212"
+    },
+    "132": {
+      "fn": "PauserRole.addPauser",
+      "jump": "i",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "133": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "134": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0xA7"
+    },
+    "137": {
+      "fn": "PauserRole.addPauser",
+      "jump": "i",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "138": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "139": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        475,
+        479
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "141": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        498,
+        519
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "statement": 0,
+      "value": "0x96"
+    },
+    "144": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        475,
+        479
+      ],
+      "op": "DUP2",
+      "path": "17"
+    },
+    "145": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        511,
+        518
+      ],
+      "op": "DUP4",
+      "path": "17"
+    },
+    "146": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        498,
+        510
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x111"
+    },
+    "149": {
+      "fn": "PauserRole.isPauser",
+      "jump": "i",
+      "offset": [
+        498,
+        519
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "150": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        498,
+        519
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "151": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        491,
+        519
+      ],
+      "op": "SWAP3",
+      "path": "17"
+    },
+    "152": {
+      "fn": "PauserRole.isPauser",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "SWAP2",
+      "path": "17"
+    },
+    "153": {
+      "op": "POP"
+    },
+    "154": {
+      "op": "POP"
+    },
+    "155": {
+      "fn": "PauserRole.isPauser",
+      "jump": "o",
+      "offset": [
+        419,
+        526
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "156": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "157": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        671,
+        696
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "statement": 1,
+      "value": "0xA5"
+    },
+    "160": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        685,
+        695
+      ],
+      "op": "CALLER",
+      "path": "17"
+    },
+    "161": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        671,
+        684
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x146"
+    },
+    "164": {
+      "fn": "PauserRole.renouncePauser",
+      "jump": "i",
+      "offset": [
+        671,
+        696
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "165": {
+      "fn": "PauserRole.renouncePauser",
+      "offset": [
+        671,
+        696
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "166": {
+      "fn": "PauserRole.renouncePauser",
+      "jump": "o",
+      "offset": [
+        628,
+        703
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "167": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "168": {
+      "offset": [
+        374,
+        394
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0xB0"
+    },
+    "171": {
+      "offset": [
+        383,
+        393
+      ],
+      "op": "CALLER",
+      "path": "17"
+    },
+    "172": {
+      "offset": [
+        374,
+        382
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x8A"
+    },
+    "175": {
+      "jump": "i",
+      "offset": [
+        374,
+        394
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "176": {
+      "branch": 15,
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        374,
+        394
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "177": {
+      "offset": [
+        366,
+        395
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0xB9"
+    },
+    "180": {
+      "branch": 15,
+      "offset": [
+        366,
+        395
+      ],
+      "op": "JUMPI",
+      "path": "17"
+    },
+    "181": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        366,
+        395
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "183": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        366,
+        395
+      ],
+      "op": "DUP1",
+      "path": "17"
+    },
+    "184": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        366,
+        395
+      ],
+      "op": "REVERT",
+      "path": "17"
+    },
+    "185": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        366,
+        395
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "186": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        596,
+        615
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "statement": 2,
+      "value": "0xC2"
+    },
+    "189": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        607,
+        614
+      ],
+      "op": "DUP2",
+      "path": "17"
+    },
+    "190": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        596,
+        606
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x188"
+    },
+    "193": {
+      "fn": "PauserRole.addPauser",
+      "jump": "i",
+      "offset": [
+        596,
+        615
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "194": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        596,
+        615
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "195": {
+      "fn": "PauserRole.addPauser",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "POP",
+      "path": "17"
+    },
+    "196": {
+      "fn": "PauserRole.addPauser",
+      "jump": "o",
+      "offset": [
+        532,
+        622
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "197": {
+      "fn": "Roles.add",
+      "offset": [
+        293,
+        474
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "198": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "200": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "202": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "204": {
+      "op": "SHL"
+    },
+    "205": {
+      "op": "SUB"
+    },
+    "206": {
+      "fn": "Roles.add",
+      "offset": [
+        369,
+        390
+      ],
+      "op": "DUP2",
+      "path": "18",
+      "statement": 3
+    },
+    "207": {
+      "branch": 16,
+      "fn": "Roles.add",
+      "offset": [
+        369,
+        390
+      ],
+      "op": "AND",
+      "path": "18"
+    },
+    "208": {
+      "fn": "Roles.add",
+      "offset": [
+        361,
+        391
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0xD8"
+    },
+    "211": {
+      "branch": 16,
+      "fn": "Roles.add",
+      "offset": [
+        361,
+        391
+      ],
+      "op": "JUMPI",
+      "path": "18"
+    },
+    "212": {
+      "fn": "Roles.add",
+      "offset": [
+        361,
+        391
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "214": {
+      "fn": "Roles.add",
+      "offset": [
+        361,
+        391
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "215": {
+      "fn": "Roles.add",
+      "offset": [
+        361,
+        391
+      ],
+      "op": "REVERT",
+      "path": "18"
+    },
+    "216": {
+      "fn": "Roles.add",
+      "offset": [
+        361,
+        391
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "217": {
+      "fn": "Roles.add",
+      "offset": [
+        410,
+        428
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "statement": 4,
+      "value": "0xE2"
+    },
+    "220": {
+      "fn": "Roles.add",
+      "offset": [
+        414,
+        418
+      ],
+      "op": "DUP3",
+      "path": "18"
+    },
+    "221": {
+      "fn": "Roles.add",
+      "offset": [
+        420,
+        427
+      ],
+      "op": "DUP3",
+      "path": "18"
+    },
+    "222": {
+      "fn": "Roles.add",
+      "offset": [
+        410,
+        413
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0x111"
+    },
+    "225": {
+      "fn": "Roles.add",
+      "jump": "i",
+      "offset": [
+        410,
+        428
+      ],
+      "op": "JUMP",
+      "path": "18"
+    },
+    "226": {
+      "fn": "Roles.add",
+      "offset": [
+        410,
+        428
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "227": {
+      "branch": 17,
+      "fn": "Roles.add",
+      "offset": [
+        409,
+        428
+      ],
+      "op": "ISZERO",
+      "path": "18"
+    },
+    "228": {
+      "fn": "Roles.add",
+      "offset": [
+        401,
+        429
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0xEC"
+    },
+    "231": {
+      "branch": 17,
+      "fn": "Roles.add",
+      "offset": [
+        401,
+        429
+      ],
+      "op": "JUMPI",
+      "path": "18"
+    },
+    "232": {
+      "fn": "Roles.add",
+      "offset": [
+        401,
+        429
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "234": {
+      "fn": "Roles.add",
+      "offset": [
+        401,
+        429
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "235": {
+      "fn": "Roles.add",
+      "offset": [
+        401,
+        429
+      ],
+      "op": "REVERT",
+      "path": "18"
+    },
+    "236": {
+      "fn": "Roles.add",
+      "offset": [
+        401,
+        429
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "237": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "239": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "241": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "243": {
+      "op": "SHL"
+    },
+    "244": {
+      "op": "SUB"
+    },
+    "245": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "AND",
+      "path": "18",
+      "statement": 5
+    },
+    "246": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        451
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "248": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "249": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "DUP2",
+      "path": "18"
+    },
+    "250": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "MSTORE",
+      "path": "18"
+    },
+    "251": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x20"
+    },
+    "253": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "SWAP2",
+      "path": "18"
+    },
+    "254": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "255": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "SWAP2",
+      "path": "18"
+    },
+    "256": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "MSTORE",
+      "path": "18"
+    },
+    "257": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x40"
+    },
+    "259": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "260": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        460
+      ],
+      "op": "KECCAK256",
+      "path": "18"
+    },
+    "261": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        467
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "262": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        467
+      ],
+      "op": "SLOAD",
+      "path": "18"
+    },
+    "263": {
+      "op": "PUSH1",
+      "value": "0xFF"
+    },
+    "265": {
+      "op": "NOT"
+    },
+    "266": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        467
+      ],
+      "op": "AND",
+      "path": "18"
+    },
+    "267": {
+      "fn": "Roles.add",
+      "offset": [
+        463,
+        467
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x1"
+    },
+    "269": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        467
+      ],
+      "op": "OR",
+      "path": "18"
+    },
+    "270": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        467
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "271": {
+      "fn": "Roles.add",
+      "offset": [
+        440,
+        467
+      ],
+      "op": "SSTORE",
+      "path": "18"
+    },
+    "272": {
+      "fn": "Roles.add",
+      "jump": "o",
+      "offset": [
+        293,
+        474
+      ],
+      "op": "JUMP",
+      "path": "18"
+    },
+    "273": {
+      "fn": "Roles.has",
+      "offset": [
+        820,
+        982
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "274": {
+      "fn": "Roles.has",
+      "offset": [
+        892,
+        896
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "276": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "278": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "280": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "282": {
+      "op": "SHL"
+    },
+    "283": {
+      "op": "SUB"
+    },
+    "284": {
+      "fn": "Roles.has",
+      "offset": [
+        916,
+        937
+      ],
+      "op": "DUP3",
+      "path": "18",
+      "statement": 6
+    },
+    "285": {
+      "branch": 18,
+      "fn": "Roles.has",
+      "offset": [
+        916,
+        937
+      ],
+      "op": "AND",
+      "path": "18"
+    },
+    "286": {
+      "fn": "Roles.has",
+      "offset": [
+        908,
+        938
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0x126"
+    },
+    "289": {
+      "branch": 18,
+      "fn": "Roles.has",
+      "offset": [
+        908,
+        938
+      ],
+      "op": "JUMPI",
+      "path": "18"
+    },
+    "290": {
+      "fn": "Roles.has",
+      "offset": [
+        908,
+        938
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "292": {
+      "fn": "Roles.has",
+      "offset": [
+        908,
+        938
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "293": {
+      "fn": "Roles.has",
+      "offset": [
+        908,
+        938
+      ],
+      "op": "REVERT",
+      "path": "18"
+    },
+    "294": {
+      "fn": "Roles.has",
+      "offset": [
+        908,
+        938
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "295": {
+      "op": "POP"
+    },
+    "296": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "298": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "300": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "302": {
+      "op": "SHL"
+    },
+    "303": {
+      "op": "SUB"
+    },
+    "304": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "AND",
+      "path": "18",
+      "statement": 7
+    },
+    "305": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        966
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "307": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "308": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "DUP2",
+      "path": "18"
+    },
+    "309": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "MSTORE",
+      "path": "18"
+    },
+    "310": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x20"
+    },
+    "312": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SWAP2",
+      "path": "18"
+    },
+    "313": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "314": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SWAP2",
+      "path": "18"
+    },
+    "315": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "MSTORE",
+      "path": "18"
+    },
+    "316": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x40"
+    },
+    "318": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "319": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "KECCAK256",
+      "path": "18"
+    },
+    "320": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SLOAD",
+      "path": "18"
+    },
+    "321": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0xFF"
+    },
+    "323": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "AND",
+      "path": "18"
+    },
+    "324": {
+      "fn": "Roles.has",
+      "offset": [
+        955,
+        975
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "325": {
+      "fn": "Roles.has",
+      "jump": "o",
+      "offset": [
+        820,
+        982
+      ],
+      "op": "JUMP",
+      "path": "18"
+    },
+    "326": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        834,
+        961
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "327": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        893,
+        917
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "statement": 8,
+      "value": "0x151"
+    },
+    "330": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        893,
+        901
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "332": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        909,
+        916
+      ],
+      "op": "DUP3",
+      "path": "17"
+    },
+    "333": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        893,
+        908
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0x1CA"
+    },
+    "336": {
+      "fn": "PauserRole._removePauser",
+      "jump": "i",
+      "offset": [
+        893,
+        917
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "337": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        893,
+        917
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "338": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "statement": 9,
+      "value": "0x40"
+    },
+    "340": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "MLOAD",
+      "path": "17"
+    },
+    "341": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "343": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "345": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "347": {
+      "op": "SHL"
+    },
+    "348": {
+      "op": "SUB"
+    },
+    "349": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "DUP3",
+      "path": "17"
+    },
+    "350": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "AND",
+      "path": "17"
+    },
+    "351": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "352": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "PUSH32",
+      "path": "17",
+      "value": "0xCD265EBAF09DF2871CC7BD4133404A235BA12EFF2041BB89D9C714A2621C7C7E"
+    },
+    "385": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "386": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "388": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "389": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        932,
+        954
+      ],
+      "op": "LOG2",
+      "path": "17"
+    },
+    "390": {
+      "fn": "PauserRole._removePauser",
+      "offset": [
+        834,
+        961
+      ],
+      "op": "POP",
+      "path": "17"
+    },
+    "391": {
+      "fn": "PauserRole._removePauser",
+      "jump": "o",
+      "offset": [
+        834,
+        961
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "392": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        709,
+        828
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "393": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        765,
+        786
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "statement": 10,
+      "value": "0x193"
+    },
+    "396": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        765,
+        773
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "398": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        778,
+        785
+      ],
+      "op": "DUP3",
+      "path": "17"
+    },
+    "399": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        765,
+        777
+      ],
+      "op": "PUSH2",
+      "path": "17",
+      "value": "0xC5"
+    },
+    "402": {
+      "fn": "PauserRole._addPauser",
+      "jump": "i",
+      "offset": [
+        765,
+        786
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "403": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        765,
+        786
+      ],
+      "op": "JUMPDEST",
+      "path": "17"
+    },
+    "404": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "statement": 11,
+      "value": "0x40"
+    },
+    "406": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "MLOAD",
+      "path": "17"
+    },
+    "407": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "409": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "411": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "413": {
+      "op": "SHL"
+    },
+    "414": {
+      "op": "SUB"
+    },
+    "415": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "DUP3",
+      "path": "17"
+    },
+    "416": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "AND",
+      "path": "17"
+    },
+    "417": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "418": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "PUSH32",
+      "path": "17",
+      "value": "0x6719D08C1888103BEA251A4ED56406BD0C3E69723C8A1686E017E7BBE159B6F8"
+    },
+    "451": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "452": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "PUSH1",
+      "path": "17",
+      "value": "0x0"
+    },
+    "454": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "SWAP1",
+      "path": "17"
+    },
+    "455": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        801,
+        821
+      ],
+      "op": "LOG2",
+      "path": "17"
+    },
+    "456": {
+      "fn": "PauserRole._addPauser",
+      "offset": [
+        709,
+        828
+      ],
+      "op": "POP",
+      "path": "17"
+    },
+    "457": {
+      "fn": "PauserRole._addPauser",
+      "jump": "o",
+      "offset": [
+        709,
+        828
+      ],
+      "op": "JUMP",
+      "path": "17"
+    },
+    "458": {
+      "fn": "Roles.remove",
+      "offset": [
+        548,
+        732
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "459": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "461": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "463": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "465": {
+      "op": "SHL"
+    },
+    "466": {
+      "op": "SUB"
+    },
+    "467": {
+      "fn": "Roles.remove",
+      "offset": [
+        627,
+        648
+      ],
+      "op": "DUP2",
+      "path": "18",
+      "statement": 12
+    },
+    "468": {
+      "branch": 19,
+      "fn": "Roles.remove",
+      "offset": [
+        627,
+        648
+      ],
+      "op": "AND",
+      "path": "18"
+    },
+    "469": {
+      "fn": "Roles.remove",
+      "offset": [
+        619,
+        649
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0x1DD"
+    },
+    "472": {
+      "branch": 19,
+      "fn": "Roles.remove",
+      "offset": [
+        619,
+        649
+      ],
+      "op": "JUMPI",
+      "path": "18"
+    },
+    "473": {
+      "fn": "Roles.remove",
+      "offset": [
+        619,
+        649
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "475": {
+      "fn": "Roles.remove",
+      "offset": [
+        619,
+        649
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "476": {
+      "fn": "Roles.remove",
+      "offset": [
+        619,
+        649
+      ],
+      "op": "REVERT",
+      "path": "18"
+    },
+    "477": {
+      "fn": "Roles.remove",
+      "offset": [
+        619,
+        649
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "478": {
+      "fn": "Roles.remove",
+      "offset": [
+        667,
+        685
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "statement": 13,
+      "value": "0x1E7"
+    },
+    "481": {
+      "fn": "Roles.remove",
+      "offset": [
+        671,
+        675
+      ],
+      "op": "DUP3",
+      "path": "18"
+    },
+    "482": {
+      "fn": "Roles.remove",
+      "offset": [
+        677,
+        684
+      ],
+      "op": "DUP3",
+      "path": "18"
+    },
+    "483": {
+      "fn": "Roles.remove",
+      "offset": [
+        667,
+        670
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0x111"
+    },
+    "486": {
+      "fn": "Roles.remove",
+      "jump": "i",
+      "offset": [
+        667,
+        685
+      ],
+      "op": "JUMP",
+      "path": "18"
+    },
+    "487": {
+      "branch": 20,
+      "fn": "Roles.remove",
+      "offset": [
+        667,
+        685
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "488": {
+      "fn": "Roles.remove",
+      "offset": [
+        659,
+        686
+      ],
+      "op": "PUSH2",
+      "path": "18",
+      "value": "0x1F0"
+    },
+    "491": {
+      "branch": 20,
+      "fn": "Roles.remove",
+      "offset": [
+        659,
+        686
+      ],
+      "op": "JUMPI",
+      "path": "18"
+    },
+    "492": {
+      "fn": "Roles.remove",
+      "offset": [
+        659,
+        686
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "494": {
+      "fn": "Roles.remove",
+      "offset": [
+        659,
+        686
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "495": {
+      "fn": "Roles.remove",
+      "offset": [
+        659,
+        686
+      ],
+      "op": "REVERT",
+      "path": "18"
+    },
+    "496": {
+      "fn": "Roles.remove",
+      "offset": [
+        659,
+        686
+      ],
+      "op": "JUMPDEST",
+      "path": "18"
+    },
+    "497": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "499": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "501": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "503": {
+      "op": "SHL"
+    },
+    "504": {
+      "op": "SUB"
+    },
+    "505": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "AND",
+      "path": "18",
+      "statement": 14
+    },
+    "506": {
+      "fn": "Roles.remove",
+      "offset": [
+        720,
+        725
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x0"
+    },
+    "508": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "509": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "DUP2",
+      "path": "18"
+    },
+    "510": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "MSTORE",
+      "path": "18"
+    },
+    "511": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x20"
+    },
+    "513": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "SWAP2",
+      "path": "18"
+    },
+    "514": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "515": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "SWAP2",
+      "path": "18"
+    },
+    "516": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "MSTORE",
+      "path": "18"
+    },
+    "517": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "PUSH1",
+      "path": "18",
+      "value": "0x40"
+    },
+    "519": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "520": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        717
+      ],
+      "op": "KECCAK256",
+      "path": "18"
+    },
+    "521": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        725
+      ],
+      "op": "DUP1",
+      "path": "18"
+    },
+    "522": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        725
+      ],
+      "op": "SLOAD",
+      "path": "18"
+    },
+    "523": {
+      "op": "PUSH1",
+      "value": "0xFF"
+    },
+    "525": {
+      "op": "NOT"
+    },
+    "526": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        725
+      ],
+      "op": "AND",
+      "path": "18"
+    },
+    "527": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        725
+      ],
+      "op": "SWAP1",
+      "path": "18"
+    },
+    "528": {
+      "fn": "Roles.remove",
+      "offset": [
+        697,
+        725
+      ],
+      "op": "SSTORE",
+      "path": "18"
+    },
+    "529": {
+      "fn": "Roles.remove",
+      "jump": "o",
+      "offset": [
+        548,
+        732
+      ],
+      "op": "JUMP",
+      "path": "18"
+    },
+    "530": {
+      "op": "JUMPDEST"
+    },
+    "531": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "533": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "535": {
+      "op": "DUP3"
+    },
+    "536": {
+      "op": "DUP5"
+    },
+    "537": {
+      "op": "SUB"
+    },
+    "538": {
+      "op": "SLT"
+    },
+    "539": {
+      "op": "ISZERO"
+    },
+    "540": {
+      "op": "PUSH2",
+      "value": "0x224"
+    },
+    "543": {
+      "op": "JUMPI"
+    },
+    "544": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "546": {
+      "op": "DUP1"
+    },
+    "547": {
+      "op": "REVERT"
+    },
+    "548": {
+      "op": "JUMPDEST"
+    },
+    "549": {
+      "op": "DUP2"
+    },
+    "550": {
+      "op": "CALLDATALOAD"
+    },
+    "551": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "553": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "555": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "557": {
+      "op": "SHL"
+    },
+    "558": {
+      "op": "SUB"
+    },
+    "559": {
+      "op": "DUP2"
+    },
+    "560": {
+      "op": "AND"
+    },
+    "561": {
+      "op": "DUP2"
+    },
+    "562": {
+      "op": "EQ"
+    },
+    "563": {
+      "op": "PUSH2",
+      "value": "0x23B"
+    },
+    "566": {
+      "op": "JUMPI"
+    },
+    "567": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "569": {
+      "op": "DUP1"
+    },
+    "570": {
+      "op": "REVERT"
+    },
+    "571": {
+      "op": "JUMPDEST"
+    },
+    "572": {
+      "op": "SWAP4"
+    },
+    "573": {
+      "op": "SWAP3"
+    },
+    "574": {
+      "op": "POP"
+    },
+    "575": {
+      "op": "POP"
+    },
+    "576": {
+      "op": "POP"
+    },
+    "577": {
+      "jump": "o",
+      "op": "JUMP"
+    }
+  },
+  "sha1": "ba555f159c64d8c8a1a537d2d148cacb8882d3d8",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"./Roles.sol\";\n\n\ncontract PauserRole {\n    using Roles for Roles.Role;\n\n    event PauserAdded(address indexed account);\n    event PauserRemoved(address indexed account);\n\n    Roles.Role private _pausers;\n\n    constructor () {\n        _addPauser(msg.sender);\n    }\n\n    modifier onlyPauser() {\n        require(isPauser(msg.sender));\n        _;\n    }\n\n    function isPauser(address account) public view returns (bool) {\n        return _pausers.has(account);\n    }\n\n    function addPauser(address account) public onlyPauser {\n        _addPauser(account);\n    }\n\n    function renouncePauser() public {\n        _removePauser(msg.sender);\n    }\n\n    function _addPauser(address account) internal {\n        _pausers.add(account);\n        emit PauserAdded(account);\n    }\n\n    function _removePauser(address account) internal {\n        _pausers.remove(account);\n        emit PauserRemoved(account);\n    }\n}",
+  "sourceMap": "82:881:17:-:0;;;274:54;;;;;;;;;-1:-1:-1;299:22:17;310:10;299;:22::i;:::-;82:881;;709:119;765:21;778:7;765:8;:12;;;;;;:21;;;;:::i;:::-;801:20;;-1:-1:-1;;;;;801:20:17;;;;;;;;709:119;:::o;293:181:18:-;-1:-1:-1;;;;;369:21:18;;361:30;;;;;;410:18;414:4;420:7;410:3;:18::i;:::-;409:19;401:28;;;;;;-1:-1:-1;;;;;440:20:18;:11;:20;;;;;;;;;;;:27;;-1:-1:-1;;440:27:18;463:4;440:27;;;293:181::o;820:162::-;892:4;-1:-1:-1;;;;;916:21:18;;908:30;;;;;;-1:-1:-1;;;;;;955:20:18;:11;:20;;;;;;;;;;;;;;;820:162::o;82:881:17:-;;;;;;;",
+  "sourcePath": "contracts/PauserRole.sol",
+  "type": "contract"
+}

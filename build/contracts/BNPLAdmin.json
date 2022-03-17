@@ -1,0 +1,7210 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "revisedInterest",
+          "type": "uint256"
+        }
+      ],
+      "name": "InterestUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "ERC20IsAccepted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "Name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "Symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_contract",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_set",
+          "type": "bool"
+        }
+      ],
+      "name": "updateERC20Accepted",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newInterest",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateInterest",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newMaxDuration",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateMaxDuation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/access/Ownable.sol",
+    "1": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/security/Pausable.sol",
+    "16": "contracts/BNPLAdmin.sol",
+    "2": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/security/ReentrancyGuard.sol",
+    "9": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/utils/Context.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/BNPLAdmin.sol",
+    "exportedSymbols": {
+      "BNPLAdmin": [
+        3197
+      ],
+      "Context": [
+        3428
+      ],
+      "Ownable": [
+        830
+      ],
+      "Pausable": [
+        922
+      ],
+      "ReentrancyGuard": [
+        962
+      ]
+    },
+    "id": 3198,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3092,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:16"
+      },
+      {
+        "absolutePath": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/access/Ownable.sol",
+        "file": "@openzeppelin/contracts/access/Ownable.sol",
+        "id": 3093,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3198,
+        "sourceUnit": 831,
+        "src": "58:52:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/security/Pausable.sol",
+        "file": "@openzeppelin/contracts/security/Pausable.sol",
+        "id": 3094,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3198,
+        "sourceUnit": 923,
+        "src": "111:55:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/satwik/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.5.0/contracts/security/ReentrancyGuard.sol",
+        "file": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "id": 3095,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3198,
+        "sourceUnit": 963,
+        "src": "167:62:16",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 3096,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 830,
+              "src": "253:7:16"
+            },
+            "id": 3097,
+            "nodeType": "InheritanceSpecifier",
+            "src": "253:7:16"
+          },
+          {
+            "baseName": {
+              "id": 3098,
+              "name": "Pausable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 922,
+              "src": "262:8:16"
+            },
+            "id": 3099,
+            "nodeType": "InheritanceSpecifier",
+            "src": "262:8:16"
+          },
+          {
+            "baseName": {
+              "id": 3100,
+              "name": "ReentrancyGuard",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 962,
+              "src": "272:15:16"
+            },
+            "id": 3101,
+            "nodeType": "InheritanceSpecifier",
+            "src": "272:15:16"
+          }
+        ],
+        "canonicalName": "BNPLAdmin",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 3197,
+        "linearizedBaseContracts": [
+          3197,
+          962,
+          922,
+          830,
+          3428
+        ],
+        "name": "BNPLAdmin",
+        "nameLocation": "240:9:16",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 3105,
+            "name": "InterestUpdated",
+            "nameLocation": "296:15:16",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 3104,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3103,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "revisedInterest",
+                  "nameLocation": "320:15:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3105,
+                  "src": "312:23:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3102,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "312:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "311:25:16"
+            },
+            "src": "290:47:16"
+          },
+          {
+            "constant": false,
+            "functionSelector": "3c82c72a",
+            "id": 3109,
+            "mutability": "mutable",
+            "name": "ERC20IsAccepted",
+            "nameLocation": "514:15:16",
+            "nodeType": "VariableDeclaration",
+            "scope": 3197,
+            "src": "481:48:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 3108,
+              "keyType": {
+                "id": 3106,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "490:7:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "481:25:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 3107,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "501:4:16",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3112,
+            "mutability": "mutable",
+            "name": "maxDuration",
+            "nameLocation": "637:11:16",
+            "nodeType": "VariableDeclaration",
+            "scope": 3197,
+            "src": "629:30:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3110,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "629:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3236",
+              "id": 3111,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "651:8:16",
+              "subdenomination": "weeks",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_15724800_by_1",
+                "typeString": "int_const 15724800"
+              },
+              "value": "26"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 3115,
+            "mutability": "mutable",
+            "name": "interest",
+            "nameLocation": "764:8:16",
+            "nodeType": "VariableDeclaration",
+            "scope": 3197,
+            "src": "756:23:16",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3113,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "756:7:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "31363030",
+              "id": 3114,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "775:4:16",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1600_by_1",
+                "typeString": "int_const 1600"
+              },
+              "value": "1600"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3122,
+              "nodeType": "Block",
+              "src": "1000:40:16",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "424e504c2050726f6d6973736f7279204e6f7465",
+                    "id": 3120,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1014:22:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_c52d82615f48a43475f82278ddd842c314ad4efabb913cd7fd653a7dba694377",
+                      "typeString": "literal_string \"BNPL Promissory Note\""
+                    },
+                    "value": "BNPL Promissory Note"
+                  },
+                  "functionReturnParameters": 3119,
+                  "id": 3121,
+                  "nodeType": "Return",
+                  "src": "1007:29:16"
+                }
+              ]
+            },
+            "functionSelector": "8052474d",
+            "id": 3123,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "Name",
+            "nameLocation": "956:4:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "960:2:16"
+            },
+            "returnParameters": {
+              "id": 3119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3118,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3123,
+                  "src": "986:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3117,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "986:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "985:15:16"
+            },
+            "scope": 3197,
+            "src": "947:93:16",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 3130,
+              "nodeType": "Block",
+              "src": "1097:24:16",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "424e504c",
+                    "id": 3128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1111:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_a3c8359e88e9129b6c7c2ef6aa4b1baca80faf9733edfad5851ad912d00223dd",
+                      "typeString": "literal_string \"BNPL\""
+                    },
+                    "value": "BNPL"
+                  },
+                  "functionReturnParameters": 3127,
+                  "id": 3129,
+                  "nodeType": "Return",
+                  "src": "1104:13:16"
+                }
+              ]
+            },
+            "functionSelector": "3045aaf3",
+            "id": 3131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "Symbol",
+            "nameLocation": "1051:6:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3124,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1057:2:16"
+            },
+            "returnParameters": {
+              "id": 3127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3126,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3131,
+                  "src": "1083:13:16",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3125,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1083:6:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1082:15:16"
+            },
+            "scope": 3197,
+            "src": "1042:79:16",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 3146,
+              "nodeType": "Block",
+              "src": "1201:142:16",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 3144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 3140,
+                        "name": "ERC20IsAccepted",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3109,
+                        "src": "1306:15:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 3142,
+                      "indexExpression": {
+                        "id": 3141,
+                        "name": "_contract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3133,
+                        "src": "1322:9:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1306:26:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 3143,
+                      "name": "_set",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3135,
+                      "src": "1335:4:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1306:33:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 3145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1306:33:16"
+                }
+              ]
+            },
+            "functionSelector": "9d62e95c",
+            "id": 3147,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 3138,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 3137,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 772,
+                  "src": "1191:9:16"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1191:9:16"
+              }
+            ],
+            "name": "updateERC20Accepted",
+            "nameLocation": "1132:19:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3136,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3133,
+                  "mutability": "mutable",
+                  "name": "_contract",
+                  "nameLocation": "1160:9:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1152:17:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3132,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3135,
+                  "mutability": "mutable",
+                  "name": "_set",
+                  "nameLocation": "1176:4:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3147,
+                  "src": "1171:9:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3134,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1171:4:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:30:16"
+            },
+            "returnParameters": {
+              "id": 3139,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1201:0:16"
+            },
+            "scope": 3197,
+            "src": "1123:220:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 3172,
+              "nodeType": "Block",
+              "src": "1415:214:16",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3164,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 3155,
+                          "name": "_newMaxDuration",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3149,
+                          "src": "1502:15:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "id": 3162,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "UnaryOperation",
+                              "operator": "~",
+                              "prefix": true,
+                              "src": "1529:10:16",
+                              "subExpression": {
+                                "arguments": [
+                                  {
+                                    "hexValue": "30",
+                                    "id": 3160,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": true,
+                                    "kind": "number",
+                                    "lValueRequested": false,
+                                    "nodeType": "Literal",
+                                    "src": "1537:1:16",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    },
+                                    "value": "0"
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    }
+                                  ],
+                                  "id": 3159,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "1530:6:16",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_uint32_$",
+                                    "typeString": "type(uint32)"
+                                  },
+                                  "typeName": {
+                                    "id": 3158,
+                                    "name": "uint32",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "1530:6:16",
+                                    "typeDescriptions": {}
+                                  }
+                                },
+                                "id": 3161,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "1530:9:16",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint32",
+                                  "typeString": "uint32"
+                                }
+                              },
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint32",
+                                "typeString": "uint32"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint32",
+                                "typeString": "uint32"
+                              }
+                            ],
+                            "id": 3157,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1521:7:16",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_uint256_$",
+                              "typeString": "type(uint256)"
+                            },
+                            "typeName": {
+                              "id": 3156,
+                              "name": "uint256",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "1521:7:16",
+                              "typeDescriptions": {}
+                            }
+                          },
+                          "id": 3163,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1521:19:16",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "1502:38:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4475726174696f6e2063616e6f742065786365656420737061636520616c6c6f74656420696e20737472756374",
+                        "id": 3165,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1542:47:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_7dee05728e69986329fe6e47803298d026298da4e487d4bd05bd0a562f985c38",
+                          "typeString": "literal_string \"Duration canot exceed space alloted in struct\""
+                        },
+                        "value": "Duration canot exceed space alloted in struct"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_7dee05728e69986329fe6e47803298d026298da4e487d4bd05bd0a562f985c38",
+                          "typeString": "literal_string \"Duration canot exceed space alloted in struct\""
+                        }
+                      ],
+                      "id": 3154,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1494:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3166,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1494:96:16",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3167,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1494:96:16"
+                },
+                {
+                  "expression": {
+                    "id": 3170,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 3168,
+                      "name": "maxDuration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3112,
+                      "src": "1596:11:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 3169,
+                      "name": "_newMaxDuration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3149,
+                      "src": "1610:15:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1596:29:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3171,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1596:29:16"
+                }
+              ]
+            },
+            "functionSelector": "99e16f0d",
+            "id": 3173,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 3152,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 3151,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 772,
+                  "src": "1405:9:16"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1405:9:16"
+              }
+            ],
+            "name": "updateMaxDuation",
+            "nameLocation": "1354:16:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3150,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3149,
+                  "mutability": "mutable",
+                  "name": "_newMaxDuration",
+                  "nameLocation": "1379:15:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3173,
+                  "src": "1371:23:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3148,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1371:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1370:25:16"
+            },
+            "returnParameters": {
+              "id": 3153,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1415:0:16"
+            },
+            "scope": 3197,
+            "src": "1345:284:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 3195,
+              "nodeType": "Block",
+              "src": "1696:239:16",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 3183,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 3181,
+                          "name": "_newInterest",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3175,
+                          "src": "1804:12:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<=",
+                        "rightExpression": {
+                          "hexValue": "3130303030",
+                          "id": 3182,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1820:5:16",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_10000_by_1",
+                            "typeString": "int_const 10000"
+                          },
+                          "value": "10000"
+                        },
+                        "src": "1804:21:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "426173697320706f696e74732063616e6e6f7420657863656564203130303030",
+                        "id": 3184,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1827:34:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1d16274a5660092da50c89489cecc516f87d4c81fad74757fb2004a182cdded0",
+                          "typeString": "literal_string \"Basis points cannot exceed 10000\""
+                        },
+                        "value": "Basis points cannot exceed 10000"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1d16274a5660092da50c89489cecc516f87d4c81fad74757fb2004a182cdded0",
+                          "typeString": "literal_string \"Basis points cannot exceed 10000\""
+                        }
+                      ],
+                      "id": 3180,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1796:7:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3185,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1796:66:16",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3186,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1796:66:16"
+                },
+                {
+                  "expression": {
+                    "id": 3189,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 3187,
+                      "name": "interest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3115,
+                      "src": "1868:8:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 3188,
+                      "name": "_newInterest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3175,
+                      "src": "1879:12:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1868:23:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3190,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1868:23:16"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 3192,
+                        "name": "_newInterest",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3175,
+                        "src": "1918:12:16",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3191,
+                      "name": "InterestUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3105,
+                      "src": "1902:15:16",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 3193,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1902:29:16",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3194,
+                  "nodeType": "EmitStatement",
+                  "src": "1897:34:16"
+                }
+              ]
+            },
+            "functionSelector": "fb092bba",
+            "id": 3196,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 3178,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 3177,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 772,
+                  "src": "1686:9:16"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1686:9:16"
+              }
+            ],
+            "name": "updateInterest",
+            "nameLocation": "1640:14:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3176,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3175,
+                  "mutability": "mutable",
+                  "name": "_newInterest",
+                  "nameLocation": "1663:12:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3196,
+                  "src": "1655:20:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3174,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1655:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1654:22:16"
+            },
+            "returnParameters": {
+              "id": 3179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1696:0:16"
+            },
+            "scope": 3197,
+            "src": "1631:304:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3198,
+        "src": "231:1707:16",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:1905:16"
+  },
+  "bytecode": "608060405262eff10060035561064060045534801561001d57600080fd5b506100273361003d565b6000805460ff60a01b191690556001805561008d565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6105dd8061009c6000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80638da5cb5b116100665780638da5cb5b1461015457806399e16f0d1461016f5780639d62e95c14610182578063f2fde38b14610195578063fb092bba146101a857600080fd5b80633045aaf3146100a35780633c82c72a146100d55780635c975abb14610108578063715018a61461011a5780638052474d14610124575b600080fd5b6040805180820190915260048152631093941360e21b60208201525b6040516100cc919061048a565b60405180910390f35b6100f86100e33660046104fb565b60026020526000908152604090205460ff1681565b60405190151581526020016100cc565b600054600160a01b900460ff166100f8565b6101226101bb565b005b604080518082019091526014815273424e504c2050726f6d6973736f7279204e6f746560601b60208201526100bf565b6000546040516001600160a01b0390911681526020016100cc565b61012261017d36600461051d565b6101fa565b610122610190366004610536565b610293565b6101226101a33660046104fb565b6102e8565b6101226101b636600461051d565b610383565b6000546001600160a01b031633146101ee5760405162461bcd60e51b81526004016101e590610572565b60405180910390fd5b6101f8600061043a565b565b6000546001600160a01b031633146102245760405162461bcd60e51b81526004016101e590610572565b63ffffffff81111561028e5760405162461bcd60e51b815260206004820152602d60248201527f4475726174696f6e2063616e6f742065786365656420737061636520616c6c6f60448201526c1d1959081a5b881cdd1c9d58dd609a1b60648201526084016101e5565b600355565b6000546001600160a01b031633146102bd5760405162461bcd60e51b81526004016101e590610572565b6001600160a01b03919091166000908152600260205260409020805460ff1916911515919091179055565b6000546001600160a01b031633146103125760405162461bcd60e51b81526004016101e590610572565b6001600160a01b0381166103775760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084016101e5565b6103808161043a565b50565b6000546001600160a01b031633146103ad5760405162461bcd60e51b81526004016101e590610572565b6127108111156103ff5760405162461bcd60e51b815260206004820181905260248201527f426173697320706f696e74732063616e6e6f742065786365656420313030303060448201526064016101e5565b60048190556040518181527fea6dfd6d2633d9628db2f2e59654ec4e8c745c3fd6f05df0065037de020589e29060200160405180910390a150565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b600060208083528351808285015260005b818110156104b75785810183015185820160400152820161049b565b818111156104c9576000604083870101525b50601f01601f1916929092016040019392505050565b80356001600160a01b03811681146104f657600080fd5b919050565b60006020828403121561050d57600080fd5b610516826104df565b9392505050565b60006020828403121561052f57600080fd5b5035919050565b6000806040838503121561054957600080fd5b610552836104df565b91506020830135801515811461056757600080fd5b809150509250929050565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260408201526060019056fea2646970667358221220cc0def9db96085c12152b8a6bf1b41af363fc70881f4d195340d5d30cd64956764736f6c634300080b0033",
+  "bytecodeSha1": "e77254b5235ab01222428db15b80b30014802e25",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.11+commit.d7f03943"
+  },
+  "contractName": "BNPLAdmin",
+  "coverageMap": {
+    "branches": {
+      "0": {
+        "Ownable.transferOwnership": {
+          "18": [
+            2006,
+            2028,
+            true
+          ]
+        }
+      },
+      "1": {},
+      "16": {
+        "BNPLAdmin.updateInterest": {
+          "17": [
+            1804,
+            1825,
+            true
+          ]
+        },
+        "BNPLAdmin.updateMaxDuation": {
+          "16": [
+            1502,
+            1540,
+            true
+          ]
+        }
+      },
+      "2": {},
+      "9": {}
+    },
+    "statements": {
+      "0": {
+        "Ownable._transferOwnership": {
+          "14": [
+            2378,
+            2395
+          ],
+          "15": [
+            2405,
+            2450
+          ]
+        },
+        "Ownable.owner": {
+          "3": [
+            1101,
+            1114
+          ]
+        },
+        "Ownable.renounceOwnership": {
+          "5": [
+            1732,
+            1762
+          ]
+        },
+        "Ownable.transferOwnership": {
+          "9": [
+            1998,
+            2071
+          ],
+          "10": [
+            2081,
+            2109
+          ]
+        }
+      },
+      "1": {
+        "Pausable.paused": {
+          "1": [
+            1161,
+            1175
+          ]
+        }
+      },
+      "16": {
+        "BNPLAdmin.Name": {
+          "2": [
+            1007,
+            1036
+          ]
+        },
+        "BNPLAdmin.Symbol": {
+          "0": [
+            1104,
+            1117
+          ]
+        },
+        "BNPLAdmin.updateERC20Accepted": {
+          "8": [
+            1306,
+            1339
+          ]
+        },
+        "BNPLAdmin.updateInterest": {
+          "11": [
+            1796,
+            1862
+          ],
+          "12": [
+            1868,
+            1891
+          ],
+          "13": [
+            1897,
+            1931
+          ]
+        },
+        "BNPLAdmin.updateMaxDuation": {
+          "6": [
+            1494,
+            1590
+          ],
+          "7": [
+            1596,
+            1625
+          ]
+        }
+      },
+      "2": {},
+      "9": {
+        "Context._msgSender": {
+          "4": [
+            712,
+            729
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [
+    "OpenZeppelin/openzeppelin-contracts@4.5.0/Context",
+    "OpenZeppelin/openzeppelin-contracts@4.5.0/Ownable",
+    "OpenZeppelin/openzeppelin-contracts@4.5.0/Pausable",
+    "OpenZeppelin/openzeppelin-contracts@4.5.0/ReentrancyGuard"
+  ],
+  "deployedBytecode": "608060405234801561001057600080fd5b506004361061009e5760003560e01c80638da5cb5b116100665780638da5cb5b1461015457806399e16f0d1461016f5780639d62e95c14610182578063f2fde38b14610195578063fb092bba146101a857600080fd5b80633045aaf3146100a35780633c82c72a146100d55780635c975abb14610108578063715018a61461011a5780638052474d14610124575b600080fd5b6040805180820190915260048152631093941360e21b60208201525b6040516100cc919061048a565b60405180910390f35b6100f86100e33660046104fb565b60026020526000908152604090205460ff1681565b60405190151581526020016100cc565b600054600160a01b900460ff166100f8565b6101226101bb565b005b604080518082019091526014815273424e504c2050726f6d6973736f7279204e6f746560601b60208201526100bf565b6000546040516001600160a01b0390911681526020016100cc565b61012261017d36600461051d565b6101fa565b610122610190366004610536565b610293565b6101226101a33660046104fb565b6102e8565b6101226101b636600461051d565b610383565b6000546001600160a01b031633146101ee5760405162461bcd60e51b81526004016101e590610572565b60405180910390fd5b6101f8600061043a565b565b6000546001600160a01b031633146102245760405162461bcd60e51b81526004016101e590610572565b63ffffffff81111561028e5760405162461bcd60e51b815260206004820152602d60248201527f4475726174696f6e2063616e6f742065786365656420737061636520616c6c6f60448201526c1d1959081a5b881cdd1c9d58dd609a1b60648201526084016101e5565b600355565b6000546001600160a01b031633146102bd5760405162461bcd60e51b81526004016101e590610572565b6001600160a01b03919091166000908152600260205260409020805460ff1916911515919091179055565b6000546001600160a01b031633146103125760405162461bcd60e51b81526004016101e590610572565b6001600160a01b0381166103775760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084016101e5565b6103808161043a565b50565b6000546001600160a01b031633146103ad5760405162461bcd60e51b81526004016101e590610572565b6127108111156103ff5760405162461bcd60e51b815260206004820181905260248201527f426173697320706f696e74732063616e6e6f742065786365656420313030303060448201526064016101e5565b60048190556040518181527fea6dfd6d2633d9628db2f2e59654ec4e8c745c3fd6f05df0065037de020589e29060200160405180910390a150565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b600060208083528351808285015260005b818110156104b75785810183015185820160400152820161049b565b818111156104c9576000604083870101525b50601f01601f1916929092016040019392505050565b80356001600160a01b03811681146104f657600080fd5b919050565b60006020828403121561050d57600080fd5b610516826104df565b9392505050565b60006020828403121561052f57600080fd5b5035919050565b6000806040838503121561054957600080fd5b610552836104df565b91506020830135801515811461056757600080fd5b809150509250929050565b6020808252818101527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260408201526060019056fea2646970667358221220cc0def9db96085c12152b8a6bf1b41af363fc70881f4d195340d5d30cd64956764736f6c634300080b0033",
+  "deployedSourceMap": "231:1707:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1042:79;1104:13;;;;;;;;;;;;-1:-1:-1;;;1104:13:16;;;;1042:79;;;;;;;:::i;:::-;;;;;;;;481:48;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1150:14:19;;1143:22;1125:41;;1113:2;1098:18;481:48:16;985:187:19;1098:84:1;1145:4;1168:7;-1:-1:-1;;;1168:7:1;;;;1098:84;;1668:101:0;;;:::i;:::-;;947:93:16;1007:29;;;;;;;;;;;;-1:-1:-1;;;1007:29:16;;;;947:93;;1036:85:0;1082:7;1108:6;1036:85;;-1:-1:-1;;;;;1108:6:0;;;1323:51:19;;1311:2;1296:18;1036:85:0;1177:203:19;1345:284:16;;;;;;:::i;:::-;;:::i;1123:220::-;;;;;;:::i;:::-;;:::i;1918:198:0:-;;;;;;:::i;:::-;;:::i;1631:304:16:-;;;;;;:::i;:::-;;:::i;1668:101:0:-;1082:7;1108:6;-1:-1:-1;;;;;1108:6:0;719:10:9;1248:23:0;1240:68;;;;-1:-1:-1;;;1240:68:0;;;;;;;:::i;:::-;;;;;;;;;1732:30:::1;1759:1;1732:18;:30::i;:::-;1668:101::o:0;1345:284:16:-;1082:7:0;1108:6;-1:-1:-1;;;;;1108:6:0;719:10:9;1248:23:0;1240:68;;;;-1:-1:-1;;;1240:68:0;;;;;;;:::i;:::-;1521:19:16::1;1502:38:::0;::::1;;1494:96;;;::::0;-1:-1:-1;;;1494:96:16;;2485:2:19;1494:96:16::1;::::0;::::1;2467:21:19::0;2524:2;2504:18;;;2497:30;2563:34;2543:18;;;2536:62;-1:-1:-1;;;2614:18:19;;;2607:43;2667:19;;1494:96:16::1;2283:409:19::0;1494:96:16::1;1596:11;:29:::0;1345:284::o;1123:220::-;1082:7:0;1108:6;-1:-1:-1;;;;;1108:6:0;719:10:9;1248:23:0;1240:68;;;;-1:-1:-1;;;1240:68:0;;;;;;;:::i;:::-;-1:-1:-1;;;;;1306:26:16;;;::::1;;::::0;;;:15:::1;:26;::::0;;;;:33;;-1:-1:-1;;1306:33:16::1;::::0;::::1;;::::0;;;::::1;::::0;;1123:220::o;1918:198:0:-;1082:7;1108:6;-1:-1:-1;;;;;1108:6:0;719:10:9;1248:23:0;1240:68;;;;-1:-1:-1;;;1240:68:0;;;;;;;:::i;:::-;-1:-1:-1;;;;;2006:22:0;::::1;1998:73;;;::::0;-1:-1:-1;;;1998:73:0;;2899:2:19;1998:73:0::1;::::0;::::1;2881:21:19::0;2938:2;2918:18;;;2911:30;2977:34;2957:18;;;2950:62;-1:-1:-1;;;3028:18:19;;;3021:36;3074:19;;1998:73:0::1;2697:402:19::0;1998:73:0::1;2081:28;2100:8;2081:18;:28::i;:::-;1918:198:::0;:::o;1631:304:16:-;1082:7:0;1108:6;-1:-1:-1;;;;;1108:6:0;719:10:9;1248:23:0;1240:68;;;;-1:-1:-1;;;1240:68:0;;;;;;;:::i;:::-;1820:5:16::1;1804:12;:21;;1796:66;;;::::0;-1:-1:-1;;;1796:66:16;;3306:2:19;1796:66:16::1;::::0;::::1;3288:21:19::0;;;3325:18;;;3318:30;3384:34;3364:18;;;3357:62;3436:18;;1796:66:16::1;3104:356:19::0;1796:66:16::1;1868:8;:23:::0;;;1902:29:::1;::::0;3611:25:19;;;1902:29:16::1;::::0;3599:2:19;3584:18;1902:29:16::1;;;;;;;1631:304:::0;:::o;2270:187:0:-;2343:16;2362:6;;-1:-1:-1;;;;;2378:17:0;;;-1:-1:-1;;;;;;2378:17:0;;;;;;2410:40;;2362:6;;;;;;;2410:40;;2343:16;2410:40;2333:124;2270:187;:::o;14:597:19:-;126:4;155:2;184;173:9;166:21;216:6;210:13;259:6;254:2;243:9;239:18;232:34;284:1;294:140;308:6;305:1;302:13;294:140;;;403:14;;;399:23;;393:30;369:17;;;388:2;365:26;358:66;323:10;;294:140;;;452:6;449:1;446:13;443:91;;;522:1;517:2;508:6;497:9;493:22;489:31;482:42;443:91;-1:-1:-1;595:2:19;574:15;-1:-1:-1;;570:29:19;555:45;;;;602:2;551:54;;14:597;-1:-1:-1;;;14:597:19:o;616:173::-;684:20;;-1:-1:-1;;;;;733:31:19;;723:42;;713:70;;779:1;776;769:12;713:70;616:173;;;:::o;794:186::-;853:6;906:2;894:9;885:7;881:23;877:32;874:52;;;922:1;919;912:12;874:52;945:29;964:9;945:29;:::i;:::-;935:39;794:186;-1:-1:-1;;;794:186:19:o;1385:180::-;1444:6;1497:2;1485:9;1476:7;1472:23;1468:32;1465:52;;;1513:1;1510;1503:12;1465:52;-1:-1:-1;1536:23:19;;1385:180;-1:-1:-1;1385:180:19:o;1570:347::-;1635:6;1643;1696:2;1684:9;1675:7;1671:23;1667:32;1664:52;;;1712:1;1709;1702:12;1664:52;1735:29;1754:9;1735:29;:::i;:::-;1725:39;;1814:2;1803:9;1799:18;1786:32;1861:5;1854:13;1847:21;1840:5;1837:32;1827:60;;1883:1;1880;1873:12;1827:60;1906:5;1896:15;;;1570:347;;;;;:::o;1922:356::-;2124:2;2106:21;;;2143:18;;;2136:30;2202:34;2197:2;2182:18;;2175:62;2269:2;2254:18;;1922:356::o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "paused()": {
+        "details": "Returns true if the contract is paused, and false otherwise."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "offset": [
+    231,
+    1938
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x9E JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x8DA5CB5B GT PUSH2 0x66 JUMPI DUP1 PUSH4 0x8DA5CB5B EQ PUSH2 0x154 JUMPI DUP1 PUSH4 0x99E16F0D EQ PUSH2 0x16F JUMPI DUP1 PUSH4 0x9D62E95C EQ PUSH2 0x182 JUMPI DUP1 PUSH4 0xF2FDE38B EQ PUSH2 0x195 JUMPI DUP1 PUSH4 0xFB092BBA EQ PUSH2 0x1A8 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0x3045AAF3 EQ PUSH2 0xA3 JUMPI DUP1 PUSH4 0x3C82C72A EQ PUSH2 0xD5 JUMPI DUP1 PUSH4 0x5C975ABB EQ PUSH2 0x108 JUMPI DUP1 PUSH4 0x715018A6 EQ PUSH2 0x11A JUMPI DUP1 PUSH4 0x8052474D EQ PUSH2 0x124 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x40 DUP1 MLOAD DUP1 DUP3 ADD SWAP1 SWAP2 MSTORE PUSH1 0x4 DUP2 MSTORE PUSH4 0x10939413 PUSH1 0xE2 SHL PUSH1 0x20 DUP3 ADD MSTORE JUMPDEST PUSH1 0x40 MLOAD PUSH2 0xCC SWAP2 SWAP1 PUSH2 0x48A JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0xF8 PUSH2 0xE3 CALLDATASIZE PUSH1 0x4 PUSH2 0x4FB JUMP JUMPDEST PUSH1 0x2 PUSH1 0x20 MSTORE PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD PUSH1 0xFF AND DUP2 JUMP JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0xCC JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0xA0 SHL SWAP1 DIV PUSH1 0xFF AND PUSH2 0xF8 JUMP JUMPDEST PUSH2 0x122 PUSH2 0x1BB JUMP JUMPDEST STOP JUMPDEST PUSH1 0x40 DUP1 MLOAD DUP1 DUP3 ADD SWAP1 SWAP2 MSTORE PUSH1 0x14 DUP2 MSTORE PUSH20 0x424E504C2050726F6D6973736F7279204E6F7465 PUSH1 0x60 SHL PUSH1 0x20 DUP3 ADD MSTORE PUSH2 0xBF JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x40 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0xCC JUMP JUMPDEST PUSH2 0x122 PUSH2 0x17D CALLDATASIZE PUSH1 0x4 PUSH2 0x51D JUMP JUMPDEST PUSH2 0x1FA JUMP JUMPDEST PUSH2 0x122 PUSH2 0x190 CALLDATASIZE PUSH1 0x4 PUSH2 0x536 JUMP JUMPDEST PUSH2 0x293 JUMP JUMPDEST PUSH2 0x122 PUSH2 0x1A3 CALLDATASIZE PUSH1 0x4 PUSH2 0x4FB JUMP JUMPDEST PUSH2 0x2E8 JUMP JUMPDEST PUSH2 0x122 PUSH2 0x1B6 CALLDATASIZE PUSH1 0x4 PUSH2 0x51D JUMP JUMPDEST PUSH2 0x383 JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND CALLER EQ PUSH2 0x1EE JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0x1E5 SWAP1 PUSH2 0x572 JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST PUSH2 0x1F8 PUSH1 0x0 PUSH2 0x43A JUMP JUMPDEST JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND CALLER EQ PUSH2 0x224 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0x1E5 SWAP1 PUSH2 0x572 JUMP JUMPDEST PUSH4 0xFFFFFFFF DUP2 GT ISZERO PUSH2 0x28E JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x2D PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4475726174696F6E2063616E6F742065786365656420737061636520616C6C6F PUSH1 0x44 DUP3 ADD MSTORE PUSH13 0x1D1959081A5B881CDD1C9D58DD PUSH1 0x9A SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x1E5 JUMP JUMPDEST PUSH1 0x3 SSTORE JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND CALLER EQ PUSH2 0x2BD JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0x1E5 SWAP1 PUSH2 0x572 JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP2 SWAP1 SWAP2 AND PUSH1 0x0 SWAP1 DUP2 MSTORE PUSH1 0x2 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 KECCAK256 DUP1 SLOAD PUSH1 0xFF NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND CALLER EQ PUSH2 0x312 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0x1E5 SWAP1 PUSH2 0x572 JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND PUSH2 0x377 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4F776E61626C653A206E6577206F776E657220697320746865207A65726F2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xD0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x1E5 JUMP JUMPDEST PUSH2 0x380 DUP2 PUSH2 0x43A JUMP JUMPDEST POP JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND CALLER EQ PUSH2 0x3AD JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0x1E5 SWAP1 PUSH2 0x572 JUMP JUMPDEST PUSH2 0x2710 DUP2 GT ISZERO PUSH2 0x3FF JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD DUP2 SWAP1 MSTORE PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x426173697320706F696E74732063616E6E6F7420657863656564203130303030 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD PUSH2 0x1E5 JUMP JUMPDEST PUSH1 0x4 DUP2 SWAP1 SSTORE PUSH1 0x40 MLOAD DUP2 DUP2 MSTORE PUSH32 0xEA6DFD6D2633D9628DB2F2E59654EC4E8C745C3FD6F05DF0065037DE020589E2 SWAP1 PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG1 POP JUMP JUMPDEST PUSH1 0x0 DUP1 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP4 DUP2 AND PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB NOT DUP4 AND DUP2 OR DUP5 SSTORE PUSH1 0x40 MLOAD SWAP2 SWAP1 SWAP3 AND SWAP3 DUP4 SWAP2 PUSH32 0x8BE0079C531659141344CD1FD0A4F28419497F9722A3DAAFE3B4186F6B6457E0 SWAP2 SWAP1 LOG3 POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP1 DUP4 MSTORE DUP4 MLOAD DUP1 DUP3 DUP6 ADD MSTORE PUSH1 0x0 JUMPDEST DUP2 DUP2 LT ISZERO PUSH2 0x4B7 JUMPI DUP6 DUP2 ADD DUP4 ADD MLOAD DUP6 DUP3 ADD PUSH1 0x40 ADD MSTORE DUP3 ADD PUSH2 0x49B JUMP JUMPDEST DUP2 DUP2 GT ISZERO PUSH2 0x4C9 JUMPI PUSH1 0x0 PUSH1 0x40 DUP4 DUP8 ADD ADD MSTORE JUMPDEST POP PUSH1 0x1F ADD PUSH1 0x1F NOT AND SWAP3 SWAP1 SWAP3 ADD PUSH1 0x40 ADD SWAP4 SWAP3 POP POP POP JUMP JUMPDEST DUP1 CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x4F6 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP2 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x50D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x516 DUP3 PUSH2 0x4DF JUMP JUMPDEST SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x52F JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD SWAP2 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x40 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x549 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x552 DUP4 PUSH2 0x4DF JUMP JUMPDEST SWAP2 POP PUSH1 0x20 DUP4 ADD CALLDATALOAD DUP1 ISZERO ISZERO DUP2 EQ PUSH2 0x567 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 SWAP2 POP POP SWAP3 POP SWAP3 SWAP1 POP JUMP JUMPDEST PUSH1 0x20 DUP1 DUP3 MSTORE DUP2 DUP2 ADD MSTORE PUSH32 0x4F776E61626C653A2063616C6C6572206973206E6F7420746865206F776E6572 PUSH1 0x40 DUP3 ADD MSTORE PUSH1 0x60 ADD SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xCC 0xD 0xEF SWAP14 0xB9 PUSH1 0x85 0xC1 0x21 MSTORE 0xB8 0xA6 0xBF SHL COINBASE 0xAF CALLDATASIZE EXTCODEHASH 0xC7 ADDMOD DUP2 DELEGATECALL 0xD1 SWAP6 CALLVALUE 0xD 0x5D ADDRESS 0xCD PUSH5 0x956764736F PUSH13 0x634300080B0033000000000000 ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "CALLVALUE",
+      "path": "16"
+    },
+    "6": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "ISZERO",
+      "path": "16"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x10"
+    },
+    "11": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x0"
+    },
+    "14": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "15": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "REVERT",
+      "path": "16"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "17": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "POP",
+      "path": "16"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "CALLDATASIZE",
+      "path": "16"
+    },
+    "21": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "LT",
+      "path": "16"
+    },
+    "22": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x9E"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x0"
+    },
+    "28": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "CALLDATALOAD",
+      "path": "16"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0xE0"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "SHR",
+      "path": "16"
+    },
+    "32": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "33": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x8DA5CB5B"
+    },
+    "38": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "GT",
+      "path": "16"
+    },
+    "39": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x66"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "43": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "44": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x8DA5CB5B"
+    },
+    "49": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "50": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x154"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "54": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "55": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x99E16F0D"
+    },
+    "60": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "61": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x16F"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "65": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "66": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x9D62E95C"
+    },
+    "71": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "72": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x182"
+    },
+    "75": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "76": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "77": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0xF2FDE38B"
+    },
+    "82": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "83": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x195"
+    },
+    "86": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "87": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "88": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0xFB092BBA"
+    },
+    "93": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "94": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x1A8"
+    },
+    "97": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "98": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x0"
+    },
+    "100": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "101": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "REVERT",
+      "path": "16"
+    },
+    "102": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "103": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "104": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x3045AAF3"
+    },
+    "109": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "110": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xA3"
+    },
+    "113": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "114": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "115": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x3C82C72A"
+    },
+    "120": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "121": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xD5"
+    },
+    "124": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "125": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "126": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x5C975ABB"
+    },
+    "131": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "132": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x108"
+    },
+    "135": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "136": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "137": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x715018A6"
+    },
+    "142": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "143": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x11A"
+    },
+    "146": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "147": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "148": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "value": "0x8052474D"
+    },
+    "153": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "EQ",
+      "path": "16"
+    },
+    "154": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x124"
+    },
+    "157": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "158": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "159": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x0"
+    },
+    "161": {
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "162": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        231,
+        1938
+      ],
+      "op": "REVERT",
+      "path": "16"
+    },
+    "163": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "164": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "statement": 0,
+      "value": "0x40"
+    },
+    "166": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "167": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "168": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "169": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "DUP3",
+      "path": "16"
+    },
+    "170": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "ADD",
+      "path": "16"
+    },
+    "171": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "172": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "173": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "174": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "176": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "177": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "178": {
+      "op": "PUSH4",
+      "value": "0x10939413"
+    },
+    "183": {
+      "op": "PUSH1",
+      "value": "0xE2"
+    },
+    "185": {
+      "op": "SHL"
+    },
+    "186": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x20"
+    },
+    "188": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "DUP3",
+      "path": "16"
+    },
+    "189": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "ADD",
+      "path": "16"
+    },
+    "190": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1104,
+        1117
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "191": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "192": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "194": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "195": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xCC"
+    },
+    "198": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "199": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "200": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x48A"
+    },
+    "203": {
+      "fn": "BNPLAdmin.Symbol",
+      "jump": "i",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "204": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "205": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "207": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "208": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "209": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "210": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "SUB",
+      "path": "16"
+    },
+    "211": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "212": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        1042,
+        1121
+      ],
+      "op": "RETURN",
+      "path": "16"
+    },
+    "213": {
+      "offset": [
+        481,
+        529
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "214": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xF8"
+    },
+    "217": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xE3"
+    },
+    "220": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "CALLDATASIZE",
+      "path": "16"
+    },
+    "221": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "223": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x4FB"
+    },
+    "226": {
+      "fn": "BNPLAdmin.Symbol",
+      "jump": "i",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "227": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "228": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x2"
+    },
+    "230": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x20"
+    },
+    "232": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "233": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x0"
+    },
+    "235": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "236": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "237": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "238": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "240": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "241": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "KECCAK256",
+      "path": "16"
+    },
+    "242": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "SLOAD",
+      "path": "16"
+    },
+    "243": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0xFF"
+    },
+    "245": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "AND",
+      "path": "16"
+    },
+    "246": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "247": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "248": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "249": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "251": {
+      "fn": "BNPLAdmin.Symbol",
+      "offset": [
+        481,
+        529
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "252": {
+      "op": "SWAP1"
+    },
+    "253": {
+      "op": "ISZERO"
+    },
+    "254": {
+      "op": "ISZERO"
+    },
+    "255": {
+      "op": "DUP2"
+    },
+    "256": {
+      "op": "MSTORE"
+    },
+    "257": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "259": {
+      "op": "ADD"
+    },
+    "260": {
+      "offset": [
+        481,
+        529
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xCC"
+    },
+    "263": {
+      "op": "JUMP"
+    },
+    "264": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1098,
+        1182
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "265": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1145,
+        1149
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "267": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "SLOAD",
+      "path": "1",
+      "statement": 1
+    },
+    "268": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "270": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "272": {
+      "op": "SHL"
+    },
+    "273": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "274": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "DIV",
+      "path": "1"
+    },
+    "275": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0xFF"
+    },
+    "277": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "278": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1098,
+        1182
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xF8"
+    },
+    "281": {
+      "fn": "Pausable.paused",
+      "offset": [
+        1098,
+        1182
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "282": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "283": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x122"
+    },
+    "286": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1BB"
+    },
+    "289": {
+      "fn": "Ownable.renounceOwnership",
+      "jump": "i",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "290": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "291": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "292": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        947,
+        1040
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "293": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "statement": 2,
+      "value": "0x40"
+    },
+    "295": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "296": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "297": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "298": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "DUP3",
+      "path": "16"
+    },
+    "299": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "ADD",
+      "path": "16"
+    },
+    "300": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "301": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "302": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "303": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x14"
+    },
+    "305": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "306": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "307": {
+      "op": "PUSH20",
+      "value": "0x424E504C2050726F6D6973736F7279204E6F7465"
+    },
+    "328": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "330": {
+      "op": "SHL"
+    },
+    "331": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x20"
+    },
+    "333": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "DUP3",
+      "path": "16"
+    },
+    "334": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "ADD",
+      "path": "16"
+    },
+    "335": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        1007,
+        1036
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "336": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        947,
+        1040
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0xBF"
+    },
+    "339": {
+      "fn": "BNPLAdmin.Name",
+      "offset": [
+        947,
+        1040
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "340": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1036,
+        1121
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "341": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1082,
+        1089
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "343": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SLOAD",
+      "path": "0",
+      "statement": 3
+    },
+    "344": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1036,
+        1121
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "346": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1036,
+        1121
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "347": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "349": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "351": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "353": {
+      "op": "SHL"
+    },
+    "354": {
+      "op": "SUB"
+    },
+    "355": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "356": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "357": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "358": {
+      "op": "DUP2"
+    },
+    "359": {
+      "op": "MSTORE"
+    },
+    "360": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "362": {
+      "op": "ADD"
+    },
+    "363": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1036,
+        1121
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0xCC"
+    },
+    "366": {
+      "op": "JUMP"
+    },
+    "367": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "368": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x122"
+    },
+    "371": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x17D"
+    },
+    "374": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "CALLDATASIZE",
+      "path": "16"
+    },
+    "375": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "377": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x51D"
+    },
+    "380": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "jump": "i",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "381": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "382": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x1FA"
+    },
+    "385": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "jump": "i",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "386": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "387": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x122"
+    },
+    "390": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x190"
+    },
+    "393": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "CALLDATASIZE",
+      "path": "16"
+    },
+    "394": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "396": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x536"
+    },
+    "399": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "jump": "i",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "400": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "401": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x293"
+    },
+    "404": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "jump": "i",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "405": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "406": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x122"
+    },
+    "409": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1A3"
+    },
+    "412": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "CALLDATASIZE",
+      "path": "0"
+    },
+    "413": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "415": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x4FB"
+    },
+    "418": {
+      "fn": "Ownable.transferOwnership",
+      "jump": "i",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "419": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "420": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2E8"
+    },
+    "423": {
+      "fn": "Ownable.transferOwnership",
+      "jump": "i",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "424": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "425": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x122"
+    },
+    "428": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x1B6"
+    },
+    "431": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "CALLDATASIZE",
+      "path": "16"
+    },
+    "432": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "434": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x51D"
+    },
+    "437": {
+      "fn": "BNPLAdmin.updateInterest",
+      "jump": "i",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "438": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "439": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x383"
+    },
+    "442": {
+      "fn": "BNPLAdmin.updateInterest",
+      "jump": "i",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "443": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "444": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1082,
+        1089
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "446": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "447": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "449": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "451": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "453": {
+      "op": "SHL"
+    },
+    "454": {
+      "op": "SUB"
+    },
+    "455": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "456": {
+      "fn": "Context._msgSender",
+      "offset": [
+        719,
+        729
+      ],
+      "op": "CALLER",
+      "path": "9",
+      "statement": 4
+    },
+    "457": {
+      "offset": [
+        1248,
+        1271
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "458": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1EE"
+    },
+    "461": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "462": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "464": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "465": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "469": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "471": {
+      "op": "SHL"
+    },
+    "472": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "473": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "474": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "476": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "477": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1E5"
+    },
+    "480": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "481": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x572"
+    },
+    "484": {
+      "fn": "Context._msgSender",
+      "jump": "i",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "485": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "486": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "488": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "489": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "490": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "491": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "492": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "493": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "REVERT",
+      "optimizer_revert": true,
+      "path": "0"
+    },
+    "494": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "495": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1732,
+        1762
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "statement": 5,
+      "value": "0x1F8"
+    },
+    "498": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1759,
+        1760
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "500": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1732,
+        1750
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x43A"
+    },
+    "503": {
+      "fn": "Ownable.renounceOwnership",
+      "jump": "i",
+      "offset": [
+        1732,
+        1762
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "504": {
+      "fn": "Ownable.renounceOwnership",
+      "offset": [
+        1732,
+        1762
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "505": {
+      "fn": "Ownable.renounceOwnership",
+      "jump": "o",
+      "offset": [
+        1668,
+        1769
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "506": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "507": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1082,
+        1089
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "509": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "510": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "512": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "514": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "516": {
+      "op": "SHL"
+    },
+    "517": {
+      "op": "SUB"
+    },
+    "518": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "519": {
+      "fn": "Context._msgSender",
+      "offset": [
+        719,
+        729
+      ],
+      "op": "CALLER",
+      "path": "9"
+    },
+    "520": {
+      "offset": [
+        1248,
+        1271
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "521": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x224"
+    },
+    "524": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "525": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "527": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "528": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "532": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "534": {
+      "op": "SHL"
+    },
+    "535": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "536": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "537": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "539": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "540": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1E5"
+    },
+    "543": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "544": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x572"
+    },
+    "547": {
+      "fn": "Context._msgSender",
+      "jump": "i",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "548": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "549": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1521,
+        1540
+      ],
+      "op": "PUSH4",
+      "path": "16",
+      "statement": 6,
+      "value": "0xFFFFFFFF"
+    },
+    "554": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1502,
+        1540
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "555": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1502,
+        1540
+      ],
+      "op": "GT",
+      "path": "16"
+    },
+    "556": {
+      "branch": 16,
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1502,
+        1540
+      ],
+      "op": "ISZERO",
+      "path": "16"
+    },
+    "557": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x28E"
+    },
+    "560": {
+      "branch": 16,
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "561": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "563": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "564": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "568": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "570": {
+      "op": "SHL"
+    },
+    "571": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "572": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "573": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "575": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "577": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "DUP3",
+      "path": "16"
+    },
+    "578": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "ADD",
+      "path": "16"
+    },
+    "579": {
+      "op": "MSTORE"
+    },
+    "580": {
+      "op": "PUSH1",
+      "value": "0x2D"
+    },
+    "582": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "584": {
+      "op": "DUP3"
+    },
+    "585": {
+      "op": "ADD"
+    },
+    "586": {
+      "op": "MSTORE"
+    },
+    "587": {
+      "op": "PUSH32",
+      "value": "0x4475726174696F6E2063616E6F742065786365656420737061636520616C6C6F"
+    },
+    "620": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "622": {
+      "op": "DUP3"
+    },
+    "623": {
+      "op": "ADD"
+    },
+    "624": {
+      "op": "MSTORE"
+    },
+    "625": {
+      "op": "PUSH13",
+      "value": "0x1D1959081A5B881CDD1C9D58DD"
+    },
+    "639": {
+      "op": "PUSH1",
+      "value": "0x9A"
+    },
+    "641": {
+      "op": "SHL"
+    },
+    "642": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "644": {
+      "op": "DUP3"
+    },
+    "645": {
+      "op": "ADD"
+    },
+    "646": {
+      "op": "MSTORE"
+    },
+    "647": {
+      "op": "PUSH1",
+      "value": "0x84"
+    },
+    "649": {
+      "op": "ADD"
+    },
+    "650": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x1E5"
+    },
+    "653": {
+      "op": "JUMP"
+    },
+    "654": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1494,
+        1590
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "655": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1596,
+        1607
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "statement": 7,
+      "value": "0x3"
+    },
+    "657": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "offset": [
+        1596,
+        1625
+      ],
+      "op": "SSTORE",
+      "path": "16"
+    },
+    "658": {
+      "fn": "BNPLAdmin.updateMaxDuation",
+      "jump": "o",
+      "offset": [
+        1345,
+        1629
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "659": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "660": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1082,
+        1089
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "662": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "663": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "665": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "667": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "669": {
+      "op": "SHL"
+    },
+    "670": {
+      "op": "SUB"
+    },
+    "671": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "672": {
+      "fn": "Context._msgSender",
+      "offset": [
+        719,
+        729
+      ],
+      "op": "CALLER",
+      "path": "9"
+    },
+    "673": {
+      "offset": [
+        1248,
+        1271
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "674": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2BD"
+    },
+    "677": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "678": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "680": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "681": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "685": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "687": {
+      "op": "SHL"
+    },
+    "688": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "689": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "690": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "692": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "693": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1E5"
+    },
+    "696": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "697": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x572"
+    },
+    "700": {
+      "fn": "Context._msgSender",
+      "jump": "i",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "701": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "702": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "704": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "706": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "708": {
+      "op": "SHL"
+    },
+    "709": {
+      "op": "SUB"
+    },
+    "710": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "SWAP2",
+      "path": "16",
+      "statement": 8
+    },
+    "711": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "712": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "713": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "AND",
+      "path": "16"
+    },
+    "714": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x0"
+    },
+    "716": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "717": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "718": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "719": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1321
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x2"
+    },
+    "721": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x20"
+    },
+    "723": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "724": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "726": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "727": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1332
+      ],
+      "op": "KECCAK256",
+      "path": "16"
+    },
+    "728": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "729": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SLOAD",
+      "path": "16"
+    },
+    "730": {
+      "op": "PUSH1",
+      "value": "0xFF"
+    },
+    "732": {
+      "op": "NOT"
+    },
+    "733": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "AND",
+      "path": "16"
+    },
+    "734": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "735": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "ISZERO",
+      "path": "16"
+    },
+    "736": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "ISZERO",
+      "path": "16"
+    },
+    "737": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "738": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "739": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "740": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "OR",
+      "path": "16"
+    },
+    "741": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "742": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "offset": [
+        1306,
+        1339
+      ],
+      "op": "SSTORE",
+      "path": "16"
+    },
+    "743": {
+      "fn": "BNPLAdmin.updateERC20Accepted",
+      "jump": "o",
+      "offset": [
+        1123,
+        1343
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "744": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "745": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1082,
+        1089
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "747": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "748": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "750": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "752": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "754": {
+      "op": "SHL"
+    },
+    "755": {
+      "op": "SUB"
+    },
+    "756": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "757": {
+      "fn": "Context._msgSender",
+      "offset": [
+        719,
+        729
+      ],
+      "op": "CALLER",
+      "path": "9"
+    },
+    "758": {
+      "offset": [
+        1248,
+        1271
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "759": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x312"
+    },
+    "762": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "763": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "765": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "766": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "770": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "772": {
+      "op": "SHL"
+    },
+    "773": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "774": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "775": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "777": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "778": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1E5"
+    },
+    "781": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "782": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x572"
+    },
+    "785": {
+      "fn": "Context._msgSender",
+      "jump": "i",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "786": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "787": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "789": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "791": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "793": {
+      "op": "SHL"
+    },
+    "794": {
+      "op": "SUB"
+    },
+    "795": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        2006,
+        2028
+      ],
+      "op": "DUP2",
+      "path": "0",
+      "statement": 9
+    },
+    "796": {
+      "branch": 18,
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        2006,
+        2028
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "797": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x377"
+    },
+    "800": {
+      "branch": 18,
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "801": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "803": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "804": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "808": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "810": {
+      "op": "SHL"
+    },
+    "811": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "812": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "813": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "815": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "817": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "818": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "819": {
+      "op": "MSTORE"
+    },
+    "820": {
+      "op": "PUSH1",
+      "value": "0x26"
+    },
+    "822": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "824": {
+      "op": "DUP3"
+    },
+    "825": {
+      "op": "ADD"
+    },
+    "826": {
+      "op": "MSTORE"
+    },
+    "827": {
+      "op": "PUSH32",
+      "value": "0x4F776E61626C653A206E6577206F776E657220697320746865207A65726F2061"
+    },
+    "860": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "862": {
+      "op": "DUP3"
+    },
+    "863": {
+      "op": "ADD"
+    },
+    "864": {
+      "op": "MSTORE"
+    },
+    "865": {
+      "op": "PUSH6",
+      "value": "0x646472657373"
+    },
+    "872": {
+      "op": "PUSH1",
+      "value": "0xD0"
+    },
+    "874": {
+      "op": "SHL"
+    },
+    "875": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "877": {
+      "op": "DUP3"
+    },
+    "878": {
+      "op": "ADD"
+    },
+    "879": {
+      "op": "MSTORE"
+    },
+    "880": {
+      "op": "PUSH1",
+      "value": "0x84"
+    },
+    "882": {
+      "op": "ADD"
+    },
+    "883": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1E5"
+    },
+    "886": {
+      "op": "JUMP"
+    },
+    "887": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1998,
+        2071
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "888": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        2081,
+        2109
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "statement": 10,
+      "value": "0x380"
+    },
+    "891": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        2100,
+        2108
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "892": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        2081,
+        2099
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x43A"
+    },
+    "895": {
+      "fn": "Ownable.transferOwnership",
+      "jump": "i",
+      "offset": [
+        2081,
+        2109
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "896": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        2081,
+        2109
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "897": {
+      "fn": "Ownable.transferOwnership",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "898": {
+      "fn": "Ownable.transferOwnership",
+      "jump": "o",
+      "offset": [
+        1918,
+        2116
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "899": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "900": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1082,
+        1089
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "902": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "903": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "905": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "907": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "909": {
+      "op": "SHL"
+    },
+    "910": {
+      "op": "SUB"
+    },
+    "911": {
+      "fn": "Ownable.owner",
+      "offset": [
+        1108,
+        1114
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "912": {
+      "fn": "Context._msgSender",
+      "offset": [
+        719,
+        729
+      ],
+      "op": "CALLER",
+      "path": "9"
+    },
+    "913": {
+      "offset": [
+        1248,
+        1271
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "914": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x3AD"
+    },
+    "917": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "918": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "920": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "921": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "925": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "927": {
+      "op": "SHL"
+    },
+    "928": {
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "929": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "930": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "932": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "933": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1E5"
+    },
+    "936": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "937": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x572"
+    },
+    "940": {
+      "fn": "Context._msgSender",
+      "jump": "i",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "941": {
+      "fn": "Context._msgSender",
+      "offset": [
+        1240,
+        1308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "942": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1820,
+        1825
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "statement": 11,
+      "value": "0x2710"
+    },
+    "945": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1804,
+        1816
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "946": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1804,
+        1825
+      ],
+      "op": "GT",
+      "path": "16"
+    },
+    "947": {
+      "branch": 17,
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1804,
+        1825
+      ],
+      "op": "ISZERO",
+      "path": "16"
+    },
+    "948": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x3FF"
+    },
+    "951": {
+      "branch": 17,
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "JUMPI",
+      "path": "16"
+    },
+    "952": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "954": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "955": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "959": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "961": {
+      "op": "SHL"
+    },
+    "962": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "963": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "MSTORE",
+      "path": "16"
+    },
+    "964": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "966": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x4"
+    },
+    "968": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "DUP3",
+      "path": "16"
+    },
+    "969": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "ADD",
+      "path": "16"
+    },
+    "970": {
+      "op": "DUP2"
+    },
+    "971": {
+      "op": "SWAP1"
+    },
+    "972": {
+      "op": "MSTORE"
+    },
+    "973": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "975": {
+      "op": "DUP3"
+    },
+    "976": {
+      "op": "ADD"
+    },
+    "977": {
+      "op": "MSTORE"
+    },
+    "978": {
+      "op": "PUSH32",
+      "value": "0x426173697320706F696E74732063616E6E6F7420657863656564203130303030"
+    },
+    "1011": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "1013": {
+      "op": "DUP3"
+    },
+    "1014": {
+      "op": "ADD"
+    },
+    "1015": {
+      "op": "MSTORE"
+    },
+    "1016": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "1018": {
+      "op": "ADD"
+    },
+    "1019": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "PUSH2",
+      "path": "16",
+      "value": "0x1E5"
+    },
+    "1022": {
+      "op": "JUMP"
+    },
+    "1023": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1796,
+        1862
+      ],
+      "op": "JUMPDEST",
+      "path": "16"
+    },
+    "1024": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1868,
+        1876
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "statement": 12,
+      "value": "0x4"
+    },
+    "1026": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1868,
+        1891
+      ],
+      "op": "DUP2",
+      "path": "16"
+    },
+    "1027": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1868,
+        1891
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "1028": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1868,
+        1891
+      ],
+      "op": "SSTORE",
+      "path": "16"
+    },
+    "1029": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "statement": 13,
+      "value": "0x40"
+    },
+    "1031": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "1032": {
+      "op": "DUP2"
+    },
+    "1033": {
+      "op": "DUP2"
+    },
+    "1034": {
+      "op": "MSTORE"
+    },
+    "1035": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "PUSH32",
+      "path": "16",
+      "value": "0xEA6DFD6D2633D9628DB2F2E59654EC4E8C745C3FD6F05DF0065037DE020589E2"
+    },
+    "1068": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "1069": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1071": {
+      "op": "ADD"
+    },
+    "1072": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "PUSH1",
+      "path": "16",
+      "value": "0x40"
+    },
+    "1074": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "MLOAD",
+      "path": "16"
+    },
+    "1075": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "DUP1",
+      "path": "16"
+    },
+    "1076": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "SWAP2",
+      "path": "16"
+    },
+    "1077": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "SUB",
+      "path": "16"
+    },
+    "1078": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "SWAP1",
+      "path": "16"
+    },
+    "1079": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1902,
+        1931
+      ],
+      "op": "LOG1",
+      "path": "16"
+    },
+    "1080": {
+      "fn": "BNPLAdmin.updateInterest",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "POP",
+      "path": "16"
+    },
+    "1081": {
+      "fn": "BNPLAdmin.updateInterest",
+      "jump": "o",
+      "offset": [
+        1631,
+        1935
+      ],
+      "op": "JUMP",
+      "path": "16"
+    },
+    "1082": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2270,
+        2457
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "1083": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2343,
+        2359
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "1085": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "1086": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "1087": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1089": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1091": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "1093": {
+      "op": "SHL"
+    },
+    "1094": {
+      "op": "SUB"
+    },
+    "1095": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "DUP4",
+      "path": "0",
+      "statement": 14
+    },
+    "1096": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1097": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "1098": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1100": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1102": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "1104": {
+      "op": "SHL"
+    },
+    "1105": {
+      "op": "SUB"
+    },
+    "1106": {
+      "op": "NOT"
+    },
+    "1107": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "1108": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "1109": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1110": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "OR",
+      "path": "0"
+    },
+    "1111": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "DUP5",
+      "path": "0"
+    },
+    "1112": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2378,
+        2395
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "1113": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2410,
+        2450
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 15,
+      "value": "0x40"
+    },
+    "1115": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2410,
+        2450
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "1116": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "1117": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1118": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "1119": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "1120": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "1121": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "1122": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2362,
+        2368
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "1123": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2410,
+        2450
+      ],
+      "op": "PUSH32",
+      "path": "0",
+      "value": "0x8BE0079C531659141344CD1FD0A4F28419497F9722A3DAAFE3B4186F6B6457E0"
+    },
+    "1156": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2410,
+        2450
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "1157": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2343,
+        2359
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1158": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2410,
+        2450
+      ],
+      "op": "LOG3",
+      "path": "0"
+    },
+    "1159": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2333,
+        2457
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "1160": {
+      "fn": "Ownable._transferOwnership",
+      "offset": [
+        2270,
+        2457
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "1161": {
+      "fn": "Ownable._transferOwnership",
+      "jump": "o",
+      "offset": [
+        2270,
+        2457
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "1162": {
+      "op": "JUMPDEST"
+    },
+    "1163": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1165": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1167": {
+      "op": "DUP1"
+    },
+    "1168": {
+      "op": "DUP4"
+    },
+    "1169": {
+      "op": "MSTORE"
+    },
+    "1170": {
+      "op": "DUP4"
+    },
+    "1171": {
+      "op": "MLOAD"
+    },
+    "1172": {
+      "op": "DUP1"
+    },
+    "1173": {
+      "op": "DUP3"
+    },
+    "1174": {
+      "op": "DUP6"
+    },
+    "1175": {
+      "op": "ADD"
+    },
+    "1176": {
+      "op": "MSTORE"
+    },
+    "1177": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1179": {
+      "op": "JUMPDEST"
+    },
+    "1180": {
+      "op": "DUP2"
+    },
+    "1181": {
+      "op": "DUP2"
+    },
+    "1182": {
+      "op": "LT"
+    },
+    "1183": {
+      "op": "ISZERO"
+    },
+    "1184": {
+      "op": "PUSH2",
+      "value": "0x4B7"
+    },
+    "1187": {
+      "op": "JUMPI"
+    },
+    "1188": {
+      "op": "DUP6"
+    },
+    "1189": {
+      "op": "DUP2"
+    },
+    "1190": {
+      "op": "ADD"
+    },
+    "1191": {
+      "op": "DUP4"
+    },
+    "1192": {
+      "op": "ADD"
+    },
+    "1193": {
+      "op": "MLOAD"
+    },
+    "1194": {
+      "op": "DUP6"
+    },
+    "1195": {
+      "op": "DUP3"
+    },
+    "1196": {
+      "op": "ADD"
+    },
+    "1197": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1199": {
+      "op": "ADD"
+    },
+    "1200": {
+      "op": "MSTORE"
+    },
+    "1201": {
+      "op": "DUP3"
+    },
+    "1202": {
+      "op": "ADD"
+    },
+    "1203": {
+      "op": "PUSH2",
+      "value": "0x49B"
+    },
+    "1206": {
+      "op": "JUMP"
+    },
+    "1207": {
+      "op": "JUMPDEST"
+    },
+    "1208": {
+      "op": "DUP2"
+    },
+    "1209": {
+      "op": "DUP2"
+    },
+    "1210": {
+      "op": "GT"
+    },
+    "1211": {
+      "op": "ISZERO"
+    },
+    "1212": {
+      "op": "PUSH2",
+      "value": "0x4C9"
+    },
+    "1215": {
+      "op": "JUMPI"
+    },
+    "1216": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1218": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1220": {
+      "op": "DUP4"
+    },
+    "1221": {
+      "op": "DUP8"
+    },
+    "1222": {
+      "op": "ADD"
+    },
+    "1223": {
+      "op": "ADD"
+    },
+    "1224": {
+      "op": "MSTORE"
+    },
+    "1225": {
+      "op": "JUMPDEST"
+    },
+    "1226": {
+      "op": "POP"
+    },
+    "1227": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1229": {
+      "op": "ADD"
+    },
+    "1230": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1232": {
+      "op": "NOT"
+    },
+    "1233": {
+      "op": "AND"
+    },
+    "1234": {
+      "op": "SWAP3"
+    },
+    "1235": {
+      "op": "SWAP1"
+    },
+    "1236": {
+      "op": "SWAP3"
+    },
+    "1237": {
+      "op": "ADD"
+    },
+    "1238": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1240": {
+      "op": "ADD"
+    },
+    "1241": {
+      "op": "SWAP4"
+    },
+    "1242": {
+      "op": "SWAP3"
+    },
+    "1243": {
+      "op": "POP"
+    },
+    "1244": {
+      "op": "POP"
+    },
+    "1245": {
+      "op": "POP"
+    },
+    "1246": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1247": {
+      "op": "JUMPDEST"
+    },
+    "1248": {
+      "op": "DUP1"
+    },
+    "1249": {
+      "op": "CALLDATALOAD"
+    },
+    "1250": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1252": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1254": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "1256": {
+      "op": "SHL"
+    },
+    "1257": {
+      "op": "SUB"
+    },
+    "1258": {
+      "op": "DUP2"
+    },
+    "1259": {
+      "op": "AND"
+    },
+    "1260": {
+      "op": "DUP2"
+    },
+    "1261": {
+      "op": "EQ"
+    },
+    "1262": {
+      "op": "PUSH2",
+      "value": "0x4F6"
+    },
+    "1265": {
+      "op": "JUMPI"
+    },
+    "1266": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1268": {
+      "op": "DUP1"
+    },
+    "1269": {
+      "op": "REVERT"
+    },
+    "1270": {
+      "op": "JUMPDEST"
+    },
+    "1271": {
+      "op": "SWAP2"
+    },
+    "1272": {
+      "op": "SWAP1"
+    },
+    "1273": {
+      "op": "POP"
+    },
+    "1274": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1275": {
+      "op": "JUMPDEST"
+    },
+    "1276": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1278": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1280": {
+      "op": "DUP3"
+    },
+    "1281": {
+      "op": "DUP5"
+    },
+    "1282": {
+      "op": "SUB"
+    },
+    "1283": {
+      "op": "SLT"
+    },
+    "1284": {
+      "op": "ISZERO"
+    },
+    "1285": {
+      "op": "PUSH2",
+      "value": "0x50D"
+    },
+    "1288": {
+      "op": "JUMPI"
+    },
+    "1289": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1291": {
+      "op": "DUP1"
+    },
+    "1292": {
+      "op": "REVERT"
+    },
+    "1293": {
+      "op": "JUMPDEST"
+    },
+    "1294": {
+      "op": "PUSH2",
+      "value": "0x516"
+    },
+    "1297": {
+      "op": "DUP3"
+    },
+    "1298": {
+      "op": "PUSH2",
+      "value": "0x4DF"
+    },
+    "1301": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1302": {
+      "op": "JUMPDEST"
+    },
+    "1303": {
+      "op": "SWAP4"
+    },
+    "1304": {
+      "op": "SWAP3"
+    },
+    "1305": {
+      "op": "POP"
+    },
+    "1306": {
+      "op": "POP"
+    },
+    "1307": {
+      "op": "POP"
+    },
+    "1308": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1309": {
+      "op": "JUMPDEST"
+    },
+    "1310": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1312": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1314": {
+      "op": "DUP3"
+    },
+    "1315": {
+      "op": "DUP5"
+    },
+    "1316": {
+      "op": "SUB"
+    },
+    "1317": {
+      "op": "SLT"
+    },
+    "1318": {
+      "op": "ISZERO"
+    },
+    "1319": {
+      "op": "PUSH2",
+      "value": "0x52F"
+    },
+    "1322": {
+      "op": "JUMPI"
+    },
+    "1323": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1325": {
+      "op": "DUP1"
+    },
+    "1326": {
+      "op": "REVERT"
+    },
+    "1327": {
+      "op": "JUMPDEST"
+    },
+    "1328": {
+      "op": "POP"
+    },
+    "1329": {
+      "op": "CALLDATALOAD"
+    },
+    "1330": {
+      "op": "SWAP2"
+    },
+    "1331": {
+      "op": "SWAP1"
+    },
+    "1332": {
+      "op": "POP"
+    },
+    "1333": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1334": {
+      "op": "JUMPDEST"
+    },
+    "1335": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1337": {
+      "op": "DUP1"
+    },
+    "1338": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1340": {
+      "op": "DUP4"
+    },
+    "1341": {
+      "op": "DUP6"
+    },
+    "1342": {
+      "op": "SUB"
+    },
+    "1343": {
+      "op": "SLT"
+    },
+    "1344": {
+      "op": "ISZERO"
+    },
+    "1345": {
+      "op": "PUSH2",
+      "value": "0x549"
+    },
+    "1348": {
+      "op": "JUMPI"
+    },
+    "1349": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1351": {
+      "op": "DUP1"
+    },
+    "1352": {
+      "op": "REVERT"
+    },
+    "1353": {
+      "op": "JUMPDEST"
+    },
+    "1354": {
+      "op": "PUSH2",
+      "value": "0x552"
+    },
+    "1357": {
+      "op": "DUP4"
+    },
+    "1358": {
+      "op": "PUSH2",
+      "value": "0x4DF"
+    },
+    "1361": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1362": {
+      "op": "JUMPDEST"
+    },
+    "1363": {
+      "op": "SWAP2"
+    },
+    "1364": {
+      "op": "POP"
+    },
+    "1365": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1367": {
+      "op": "DUP4"
+    },
+    "1368": {
+      "op": "ADD"
+    },
+    "1369": {
+      "op": "CALLDATALOAD"
+    },
+    "1370": {
+      "op": "DUP1"
+    },
+    "1371": {
+      "op": "ISZERO"
+    },
+    "1372": {
+      "op": "ISZERO"
+    },
+    "1373": {
+      "op": "DUP2"
+    },
+    "1374": {
+      "op": "EQ"
+    },
+    "1375": {
+      "op": "PUSH2",
+      "value": "0x567"
+    },
+    "1378": {
+      "op": "JUMPI"
+    },
+    "1379": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1381": {
+      "op": "DUP1"
+    },
+    "1382": {
+      "op": "REVERT"
+    },
+    "1383": {
+      "op": "JUMPDEST"
+    },
+    "1384": {
+      "op": "DUP1"
+    },
+    "1385": {
+      "op": "SWAP2"
+    },
+    "1386": {
+      "op": "POP"
+    },
+    "1387": {
+      "op": "POP"
+    },
+    "1388": {
+      "op": "SWAP3"
+    },
+    "1389": {
+      "op": "POP"
+    },
+    "1390": {
+      "op": "SWAP3"
+    },
+    "1391": {
+      "op": "SWAP1"
+    },
+    "1392": {
+      "op": "POP"
+    },
+    "1393": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1394": {
+      "op": "JUMPDEST"
+    },
+    "1395": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1397": {
+      "op": "DUP1"
+    },
+    "1398": {
+      "op": "DUP3"
+    },
+    "1399": {
+      "op": "MSTORE"
+    },
+    "1400": {
+      "op": "DUP2"
+    },
+    "1401": {
+      "op": "DUP2"
+    },
+    "1402": {
+      "op": "ADD"
+    },
+    "1403": {
+      "op": "MSTORE"
+    },
+    "1404": {
+      "op": "PUSH32",
+      "value": "0x4F776E61626C653A2063616C6C6572206973206E6F7420746865206F776E6572"
+    },
+    "1437": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1439": {
+      "op": "DUP3"
+    },
+    "1440": {
+      "op": "ADD"
+    },
+    "1441": {
+      "op": "MSTORE"
+    },
+    "1442": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "1444": {
+      "op": "ADD"
+    },
+    "1445": {
+      "op": "SWAP1"
+    },
+    "1446": {
+      "jump": "o",
+      "op": "JUMP"
+    }
+  },
+  "sha1": "2e79cd452854b86fe17f746c8b4e9d78328ebe6d",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\nimport \"@openzeppelin/contracts/security/Pausable.sol\";\nimport \"@openzeppelin/contracts/security/ReentrancyGuard.sol\";\n\ncontract BNPLAdmin is Ownable, Pausable, ReentrancyGuard{\n\nevent InterestUpdated(uint256 revisedInterest); // This event is fired whenever the admins change interest rates. Interest rates are measured in basis points. (1 Basis points = 0.01 percent)\nmapping (address => bool) public ERC20IsAccepted; // A mapping from an ERC20 currency address to whether that currency is accepted by this contract\nuint256 maxDuration = 26 weeks; // The maximum duration of any BNPL transaction started on this contract, measured in seconds.\nuint256 interest = 1600; // The percentage of the interest charged from the buyer\n\n/*constructor(address _network) {\n\n    // Accepted mainnet WETH\n    ERC20IsAccepted[_network] = true;\n\n}*/\n\nfunction Name() external pure returns (string memory){\n\n    return \"BNPL Promissory Note\";\n\n}\n\nfunction Symbol() external pure returns (string memory){\n\n    return \"BNPL\";\n\n}\n\nfunction updateERC20Accepted(address _contract, bool _set) external onlyOwner {\n    // This function can be called by admins to change the acceptance status of an ERC20 currency.\n    ERC20IsAccepted[_contract] = _set;\n\n}\n\nfunction updateMaxDuation(uint256 _newMaxDuration) external onlyOwner {\n    // This function can be called by admins to change the maxDuration. \n    require(_newMaxDuration <= uint256(~uint32(0)), \"Duration canot exceed space alloted in struct\");\n    maxDuration = _newMaxDuration;\n\n}\n\nfunction updateInterest(uint256 _newInterest) external onlyOwner {\n    // This function can be called by admins to change the percent of interest rate charged. \n    require(_newInterest <= 10000, \"Basis points cannot exceed 10000\");\n    interest = _newInterest;\n    emit InterestUpdated(_newInterest);\n\n}\n\n}",
+  "sourceMap": "231:1707:16:-:0;;;651:8;629:30;;775:4;756:23;;231:1707;;;;;;;;;-1:-1:-1;921:32:0;719:10:9;921:18:0;:32::i;:::-;991:5:1;981:15;;-1:-1:-1;;;;981:15:1;;;;1806:22:2;;231:1707:16;;2270:187:0;2343:16;2362:6;;-1:-1:-1;;;;;2378:17:0;;;-1:-1:-1;;;;;;2378:17:0;;;;;;2410:40;;2362:6;;;;;;;2410:40;;2343:16;2410:40;2333:124;2270:187;:::o;231:1707:16:-;;;;;;;",
+  "sourcePath": "contracts/BNPLAdmin.sol",
+  "type": "contract"
+}
