@@ -1,3 +1,3 @@
 # BNPL
 
-## This project is based on BUY NOW PAY LATER (BNPL) for NFTs.
+## This is a repo to work with and create BUY NOW PAY LATER (BNPL) for NFTs.
